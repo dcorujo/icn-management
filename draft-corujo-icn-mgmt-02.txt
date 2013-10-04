@@ -5,13 +5,13 @@
 ICNRG                                                          D. Corujo
 Internet-Draft                             Instituto de Telecomunicacoes
 Intended status: Informational                            K. Pentikousis
-Expires: March 06, 2014                              Huawei Technologies
+Expires: April 07, 2014                              Huawei Technologies
                                                                 I. Vidal
                                                                     UC3M
                                                               S. Lederer
                                                                S. Spirou
                                                                     TODO
-                                                      September 02, 2013
+                                                        October 04, 2013
 
 
                      ICN Management Considerations
@@ -19,23 +19,23 @@ Expires: March 06, 2014                              Huawei Technologies
 
 Abstract
 
-   TO BE UPDATED!
-
-   This document aims to draw the attention of the ICNRG community to
-   network management, an important but hitherto underdeveloped area of
-   research in information-centric networking.  We consider that the
-   availability of modern management mechanisms for information-centric
-   networks will foster their deployment in real-world environments.
-   For example, we argue that there is a need for creating basic network
-   management tools early on while ICN is still in the design and
-   experimentation phases that can evolve over time.  Perhaps ICN can
-   borrow successful mechanisms from the host-centric paradigm and adapt
-   them to the new network primitives.  Alternatively, novel network
-   management schemes can be designed based on ICN primitives.  As a
-   discussion starter, this document summarizes recently published
-   approaches for ICN network management.  In particular, this first
-   version presents a management framework for named data networking and
-   reviews previous work on NetInf management.
+   Motivated by the need to find and evaluate better ways for reaching
+   on-line content in upcoming Future Internet environments, ICN has
+   been increasingly deployed in an broad range of research and
+   experimental actions.  Some deployments even go as far as subjecting
+   ICN to new scenarios beyond content-reaching, exposing the
+   flexibility of ICN core primitives in supporting such mechanisms.  In
+   this sense, besides analyzing and discussing the role of network
+   management procedures in ICN environments, this document also
+   analyzes possibilities on how intrinsic core ICN mechanisms can be
+   reutilized for network management.  We consider that the availability
+   of management mechanisms for ICN will foster their deployment and, as
+   such, should be tackled still in the design and experimentation
+   phases.  Perhaps ICN can adapt successful mechanisms from the host-
+   centric paradigm, or new network management schemes can be designed.
+   Perhaps even both.  This document centralizes that discussion,
+   drawing the attention of the ICNRG community to this underdeveloped
+   area of research in ICN.
 
 Status of This Memo
 
@@ -53,9 +53,9 @@ Status of This Memo
 
 
 
-Corujo, et al.           Expires March 06, 2014                 [Page 1]
+Corujo, et al.           Expires April 07, 2014                 [Page 1]
 
-Internet-Draft        ICN Management Considerations       September 2013
+Internet-Draft        ICN Management Considerations         October 2013
 
 
    Internet-Drafts are draft documents valid for a maximum of six months
@@ -63,7 +63,7 @@ Internet-Draft        ICN Management Considerations       September 2013
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on March 06, 2014.
+   This Internet-Draft will expire on April 07, 2014.
 
 Copyright Notice
 
@@ -83,39 +83,37 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-   2.  ICN Management Considerations . . . . . . . . . . . . . . . .   4
+   2.  ICN Management Considerations . . . . . . . . . . . . . . . .   3
      2.1.  Face Management . . . . . . . . . . . . . . . . . . . . .   4
        2.1.1.  Towards a Management Framework for NDN  . . . . . . .   5
        2.1.2.  NDN Management Operations . . . . . . . . . . . . . .   7
-         2.1.2.1.  Discovery Procedure . . . . . . . . . . . . . . .   7
+         2.1.2.1.  Discovery Procedure . . . . . . . . . . . . . . .   8
          2.1.2.2.  Management Data Exchange  . . . . . . . . . . . .   9
        2.1.3.  Implementation Experience . . . . . . . . . . . . . .  10
      2.2.  Video Adaptation  . . . . . . . . . . . . . . . . . . . .  11
      2.3.  Content Management  . . . . . . . . . . . . . . . . . . .  11
-     2.4.  Network Policies  . . . . . . . . . . . . . . . . . . . .  12
-       2.4.1.  NetInf Management Considerations  . . . . . . . . . .  12
+     2.4.  Network Policies  . . . . . . . . . . . . . . . . . . . .  11
+       2.4.1.  NetInf Management Considerations  . . . . . . . . . .  11
    3.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  12
    4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  12
    5.  Security Considerations . . . . . . . . . . . . . . . . . . .  12
    6.  Informative References  . . . . . . . . . . . . . . . . . . .  12
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  14
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  13
 
 1.  Introduction
 
-   TO BE UPDATED BY DANIEL!
-
    Information-centric networking (ICN) enables new ideas for naming and
    addressing, privacy, security, and trust, and should also lead us to
-
-
-
-Corujo, et al.           Expires March 06, 2014                 [Page 2]
-
-Internet-Draft        ICN Management Considerations       September 2013
-
-
    think new ways for deploying, operating and managing networks in the
    future.  By default, users, programs, information objects and hosts
+
+
+
+Corujo, et al.           Expires April 07, 2014                 [Page 2]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
    are in general untrustworthy and mobile in an information-centric
    network.  This means that many of the assumptions in traditional
    network management, including all aspects of FCAPS (Fault,
@@ -139,9 +137,9 @@ Internet-Draft        ICN Management Considerations       September 2013
    explore the possibilities for defining a common management framework
    irrespective of the ICN approach taken.  We reckon that the later is
    a much more formidable task and we are looking forward to tackling it
-   together with other members of ICNRG.  We start this exercise in this
-   first version based on published literature and in particular with a
-   NDN approach.
+   together with other members of ICNRG.  In this document, different
+   ICN research aspects tackled by ICNRG members are analyzed in respect
+   to management possibilities and impact.
 
    We argue that addressing management at an early stage is not only
    important for real-world adoption and the successful future
@@ -151,28 +149,31 @@ Internet-Draft        ICN Management Considerations       September 2013
    disparate characteristics from different ICN approaches (e.g., in
    terms of namespace, granularity, routing, and so on) impact the
    definition and design of these management mechanisms.  Section 2
-   below provides an initial assessment, proposal and evaluation of
-   management mechanisms leveraging NDN intrinsic capabilities based on
-   [NDN-MGMT], while Section 2.4.1 briefly summarizes earlier work on
-   self-management for NetInf.
+   below provides an initial assessment, showcasing considerations on
+   Face Management Section 2.1, Video Adaptation Section 2.2, Content
+   Management Section 2.3and Network Policies Section 2.4.
 
-   We plan to incrementally develop the draft and incorporate other ICN
-   approaches (e.g., [PURSUIT] and [NetInf]) as well as address other
-   pertinent aspects as we receive feedback from the research group
-   members.
-
-
-
-
-
-Corujo, et al.           Expires March 06, 2014                 [Page 3]
-
-Internet-Draft        ICN Management Considerations       September 2013
-
+   We plan to incrementally develop the draft, incorporating
+   considerations on other ICN aspects as well as different approaches
+   (e.g., [PURSUIT] and [NetInf]) as well as address other pertinent
+   aspects as we receive feedback from the research group members.
 
 2.  ICN Management Considerations
 
-   TO BE UPDATED BY DANIEL!
+   This section addresses management considerations regarding specific
+   ICN deployments and scenarios, by analyzing the opportunities,
+
+
+
+Corujo, et al.           Expires April 07, 2014                 [Page 3]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
+   requirements and possibilities for management deployment therein.
+   This analysis starts with the proposal of a NDN-based face management
+   framework, followed by considerations from video adaptation, content
+   management and network policies scenarios.
 
 2.1.  Face Management
 
@@ -215,19 +216,16 @@ Internet-Draft        ICN Management Considerations       September 2013
        state regarding Interest packets, mapping them to a corresponding
        egress network interface.
 
-
-
-
-
-
-
-Corujo, et al.           Expires March 06, 2014                 [Page 4]
-
-Internet-Draft        ICN Management Considerations       September 2013
-
-
    3.  Forward Information Base (FIB): associates named data to
        potential holders of the content.  A routing protocol can
+
+
+
+Corujo, et al.           Expires April 07, 2014                 [Page 4]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
        populate the FIB (although this is outside the scope of NDN) or
        it can be populated through registration in a local NDN store.
 
@@ -274,16 +272,16 @@ Internet-Draft        ICN Management Considerations       September 2013
    example, the network to coordinate network management procedures,
    considering as input information obtained from other network elements
    as well as from user nodes.  One way to generate management
-
-
-
-Corujo, et al.           Expires March 06, 2014                 [Page 5]
-
-Internet-Draft        ICN Management Considerations       September 2013
-
-
    information in network entities and at client nodes, as well as to
    consume and act upon it (i.e., using the management information
+
+
+
+Corujo, et al.           Expires April 07, 2014                 [Page 5]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
    exchange as a control channel) is to couple NDN nodes with Management
    Agent (MA) entities.
 
@@ -330,16 +328,16 @@ Internet-Draft        ICN Management Considerations       September 2013
    network interfaces, the MA can interface with them not only to
    control (i.e., initiate wireless access scanning procedures), but
    also to collect information (i.e., an informational event regarding
-
-
-
-Corujo, et al.           Expires March 06, 2014                 [Page 6]
-
-Internet-Draft        ICN Management Considerations       September 2013
-
-
    detected access points).  Finally, the MA can also interface with
    application processes, drawing out information about the perceived
+
+
+
+Corujo, et al.           Expires April 07, 2014                 [Page 6]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
    QoS/QoE (e.g., lost packets or delay from a real-time video feed) and
    also to execute commands, such as selecting a better video codec when
    the network commands the video flow to be accessed from a different
@@ -383,16 +381,20 @@ Internet-Draft        ICN Management Considerations       September 2013
    ability to push information towards a remote node (i.e., sending a
    command or an informational event).
 
-2.1.2.1.  Discovery Procedure
 
 
 
 
 
-Corujo, et al.           Expires March 06, 2014                 [Page 7]
+
+
+
+Corujo, et al.           Expires April 07, 2014                 [Page 7]
 
-Internet-Draft        ICN Management Considerations       September 2013
+Internet-Draft        ICN Management Considerations         October 2013
 
+
+2.1.2.1.  Discovery Procedure
 
    The discovery procedure is illustrated in Fig. 2 (redrawn from
    [NDN-MGMT]), and borrows for the procedures described in [NDN-VOIP].
@@ -440,16 +442,16 @@ Internet-Draft        ICN Management Considerations       September 2013
    aspects of management capabilities allowed by a Management Entity
    (ME) (i.e., a management decision point in the network).  The ME then
    replies to this Interest with a Data packet (Fig. 2:2), providing its
+
+
+
+Corujo, et al.           Expires April 07, 2014                 [Page 8]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
    shorthand identifier (i.e., ME-publisher-key) and a key locator,
    indicating how to retrieve its public key (assuming it is authorized
-
-
-
-Corujo, et al.           Expires March 06, 2014                 [Page 8]
-
-Internet-Draft        ICN Management Considerations       September 2013
-
-
    by another key trusted by the UE).  In this way, the MA at the UE
    recognizes the ME as a valid signer (and provider) of management
    content.
@@ -485,27 +487,6 @@ Internet-Draft        ICN Management Considerations       September 2013
    finalized, the framework provides the capability for both the MA and
    the ME to securely obtain management content from one another.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Corujo, et al.           Expires March 06, 2014                 [Page 9]
-
-Internet-Draft        ICN Management Considerations       September 2013
-
-
    In order to push unsolicited content, a dual Interest/Data procedure
    can maintain compatibility with the Interest and Data exchange/
    consumption of the NDN architecture.  Fig. 3 (redrawn from Fig.2 of
@@ -517,6 +498,14 @@ Internet-Draft        ICN Management Considerations       September 2013
    If the ME is interested in retrieving content from the MA, it answers
    back with a Data packet, where it indicates that it is willing to
    receive management content.  Then, the ME sends an Interest packet to
+
+
+
+Corujo, et al.           Expires April 07, 2014                 [Page 9]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
    retrieve the management data with the sequence number provided by the
    MA, which responds with a Data packet containing the information it
    wanted to push into the ME.
@@ -548,20 +537,6 @@ Internet-Draft        ICN Management Considerations       September 2013
 
 2.1.3.  Implementation Experience
 
-
-
-
-
-
-
-
-
-
-Corujo, et al.           Expires March 06, 2014                [Page 10]
-
-Internet-Draft        ICN Management Considerations       September 2013
-
-
    As a proof-of-concept, a software prototype of the management
    framework, [NDNFlexManager] was developed for [NDN-MGMT], using the
    CCNx Java API [CCNx].  At this early stage, it includes the
@@ -579,6 +554,14 @@ Internet-Draft        ICN Management Considerations       September 2013
    an ME).  These entities are interconnected by a set of NDN routers.
    The purpose of the evaluation scenario is to demonstrate feasibility
    for the protocol exchanges mentioned earlier.  Note that the code has
+
+
+
+Corujo, et al.           Expires April 07, 2014                [Page 10]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
    been tested in a small-scale environment where the ME is topology-
    aware and keeps track of conditions of the access networks that are
    available to the UE.  Thus, the ME can provide the MA with management
@@ -605,19 +588,6 @@ Internet-Draft        ICN Management Considerations       September 2013
 
    TO BE UPDATED BY SPIROU!
 
-
-
-
-
-
-
-
-
-Corujo, et al.           Expires March 06, 2014                [Page 11]
-
-Internet-Draft        ICN Management Considerations       September 2013
-
-
 2.4.  Network Policies
 
    TO BE UPDATED BY KOSTAS!
@@ -640,6 +610,14 @@ Internet-Draft        ICN Management Considerations       September 2013
    involved in decisions about caching and (re)distribution of content,
    and not only whether an (inter)face is on or off, or what traffic
    limits should be enforced.  Moreover, network policies can be
+
+
+
+Corujo, et al.           Expires April 07, 2014                [Page 11]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
    distributed securely in the same way as other content in the network,
    removing the need for centralized management, and enabling improved
    recovery procedures.  Second, network management can get involved in
@@ -666,14 +644,6 @@ Internet-Draft        ICN Management Considerations       September 2013
 
    [CCNx]     PARC, "CCNx Project", 2013, <http://www.ccnx.org>.
 
-
-
-
-Corujo, et al.           Expires March 06, 2014                [Page 12]
-
-Internet-Draft        ICN Management Considerations       September 2013
-
-
    [DONA]     Koponen, T. et al., "A Data-Oriented (and Beyond) Network
               Architecture", SIGCOMM, ACM , 2007.
 
@@ -696,6 +666,13 @@ Internet-Draft        ICN Management Considerations       September 2013
               Jacobson, V., Smetters, D., Briggss, N., Plass, M.,
               Steward, P., and J. Thornton, "VoCCN: Voice Over Content-
               Centric Networks", ReARCH 2009, Rome , Dec 2009.
+
+
+
+Corujo, et al.           Expires April 07, 2014                [Page 12]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
 
    [NDNFlexManager]
               UC3M and ITAV, "Framework for Flexible NDN Management",
@@ -723,13 +700,6 @@ Internet-Draft        ICN Management Considerations       September 2013
               Text on Security Considerations", BCP 72, RFC 3552, July
               2003.
 
-
-
-Corujo, et al.           Expires March 06, 2014                [Page 13]
-
-Internet-Draft        ICN Management Considerations       September 2013
-
-
    [RFC5226]  Narten, T. and H. Alvestrand, "Guidelines for Writing an
               IANA Considerations Section in RFCs", BCP 26, RFC 5226,
               May 2008.
@@ -747,6 +717,17 @@ Authors' Addresses
 
    Phone: +351 234 377 900
    Email: dcorujo@av.it.pt
+
+
+
+
+
+
+
+
+Corujo, et al.           Expires April 07, 2014                [Page 13]
+
+Internet-Draft        ICN Management Considerations         October 2013
 
 
    Kostas Pentikousis
@@ -776,16 +757,6 @@ Authors' Addresses
    Email: stefan.lederer@bitmovin.com
 
 
-
-
-
-
-
-Corujo, et al.           Expires March 06, 2014                [Page 14]
-
-Internet-Draft        ICN Management Considerations       September 2013
-
-
    Spiros Spirou
    TODO
    TODO
@@ -810,31 +781,4 @@ Internet-Draft        ICN Management Considerations       September 2013
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Corujo, et al.           Expires March 06, 2014                [Page 15]
+Corujo, et al.           Expires April 07, 2014                [Page 14]
