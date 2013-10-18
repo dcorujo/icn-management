@@ -5,13 +5,13 @@
 ICNRG                                                          D. Corujo
 Internet-Draft                             Instituto de Telecomunicacoes
 Intended status: Informational                            K. Pentikousis
-Expires: April 07, 2014                              Huawei Technologies
+Expires: April 21, 2014                                             EICT
                                                                 I. Vidal
                                                                     UC3M
                                                               S. Lederer
                                                                S. Spirou
                                                                     TODO
-                                                        October 04, 2013
+                                                        October 18, 2013
 
 
                      ICN Management Considerations
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Corujo, et al.           Expires April 07, 2014                 [Page 1]
+Corujo, et al.           Expires April 21, 2014                 [Page 1]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -63,7 +63,7 @@ Internet-Draft        ICN Management Considerations         October 2013
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 07, 2014.
+   This Internet-Draft will expire on April 21, 2014.
 
 Copyright Notice
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Corujo, et al.           Expires April 07, 2014                 [Page 2]
+Corujo, et al.           Expires April 21, 2014                 [Page 2]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -165,7 +165,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 07, 2014                 [Page 3]
+Corujo, et al.           Expires April 21, 2014                 [Page 3]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -221,7 +221,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 07, 2014                 [Page 4]
+Corujo, et al.           Expires April 21, 2014                 [Page 4]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -277,7 +277,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 07, 2014                 [Page 5]
+Corujo, et al.           Expires April 21, 2014                 [Page 5]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -333,7 +333,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 07, 2014                 [Page 6]
+Corujo, et al.           Expires April 21, 2014                 [Page 6]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -389,7 +389,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 07, 2014                 [Page 7]
+Corujo, et al.           Expires April 21, 2014                 [Page 7]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -445,7 +445,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 07, 2014                 [Page 8]
+Corujo, et al.           Expires April 21, 2014                 [Page 8]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -501,7 +501,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 07, 2014                 [Page 9]
+Corujo, et al.           Expires April 21, 2014                 [Page 9]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -557,7 +557,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 07, 2014                [Page 10]
+Corujo, et al.           Expires April 21, 2014                [Page 10]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -613,7 +613,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 07, 2014                [Page 11]
+Corujo, et al.           Expires April 21, 2014                [Page 11]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -669,7 +669,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 07, 2014                [Page 12]
+Corujo, et al.           Expires April 21, 2014                [Page 12]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -725,18 +725,18 @@ Authors' Addresses
 
 
 
-Corujo, et al.           Expires April 07, 2014                [Page 13]
+Corujo, et al.           Expires April 21, 2014                [Page 13]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
 
    Kostas Pentikousis
-   Huawei Technologies
-   Carnotstrasse 4
-   10587 Berlin
+   EICT GmbH
+   Torgauer Strabe 12-15
+   10829 Berlin
    Germany
 
-   Email: k.pentikousis@huawei.com
+   Email: k.pentikousis@eict.de
 
 
    Ivan Vidal
@@ -781,4 +781,4 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 07, 2014                [Page 14]
+Corujo, et al.           Expires April 21, 2014                [Page 14]

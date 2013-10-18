@@ -81,18 +81,18 @@
           </address>
       </author>
       
-      <author fullname="Kostas Pentikousis" initials="K.P." surname="Pentikousis">
-          <organization>Huawei Technologies</organization>
-          <address>
-              <postal>
-                  <street>Carnotstrasse 4</street>
-                  <city>10587 Berlin</city>
-                  <country>Germany</country>
-              </postal>
-              <email>k.pentikousis@huawei.com</email>
-          </address>
-      </author>
-      
+<author fullname="Kostas Pentikousis" initials="K.P." surname="Pentikousis">
+ <organization abbrev="EICT">EICT GmbH</organization>
+ <address>
+	  <postal>
+		  <street>Torgauer Strabe 12-15</street>
+		  <city>10829 Berlin</city>
+		  <country>Germany</country>
+	  </postal>
+	  <email>k.pentikousis@eict.de</email>
+ </address>
+</author>
+
       <author fullname="Ivan Vidal" initials="I.V." surname="Vidal">
               <organization>UC3M</organization>
               <address>
