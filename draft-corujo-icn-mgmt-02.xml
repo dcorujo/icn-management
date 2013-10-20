@@ -352,7 +352,24 @@
 	</section>
 	<section title="Video Adaptation" anchor="sec-vid-adapt">
 
-	<t>TO BE UPDATED BY STEFAN!</t>
+
+
+	<t> This section investigates ICN management considerations for the delivery of video data, and especially the adaptive delivery of video. From a content perspective, multimedia is omnipresent in the Internet, e.g., producing 62% of the total Internet traffic in North America's fixed access networks <xref target="GIPR2013"></xref>.</t>
+
+<t>
+Video, and multimedia content in general, is has specific characteristics, which have to be considered and where network management consideration are necessary. The consumption of multimedia content comes along with timing requirements for the delivery of the content, for both, live and on-demand consumption. Long startup delays, buffering periods or poor quality, etc. should be avoided to achieve a good Quality of Experience of the consumer of the content. Of course, these requirements are heavily influenced by routing decision and caching, which are central parts of ICN, and which may be leveraged more efficiently by an intelligent network management.
+</t>
+
+<section title="Adaptive Delivery of Multimedia Content in ICN" anchor="sec-adap-delv">
+
+<t>Today's dominant streaming systems are based on the common approach of leveraging HTTP-based Internet infrastructures, which are consequently based on the Transmission Control Protocol (TCP) and the Internet Protocol (IP). Especially the adaptive multimedia streaming (AMS) via HTTP is gaining more and more momentum and resulted in the standardization of MPEG-DASH <xref target="MPEG-DASH"></xref>, which stands for Dynamic Adaptive Streaming over HTTP. The basic idea of AHS is to split up the media file into segments of equal length, which can be encoded at different resolutions, bitrates, etc. The segments are stored on conventional HTTP Web server and can be accessed through HTTP GET requests from the client. Due to this, the streaming system is pull based and the entire streaming logic is on the client side. This means that the client fully controls the bitrate of the streaming media on a per-segment basis, which has several advantages, e.g., the client knows its bandwidth requirements and capabilities best. As one can see, ICN and adaptive multimedia streaming have several elements in common, such as the client-initiated pull approach, the content being dealt with in pieces as well as the support of efficient replication and distribution of content pieces within the network. As ICN is a promising candidate for the Future Internet (FI) architecture, it is useful to investigate its suitability in combination with AMS systems and standards like MPEG-DASH as shown in <xref target="AdaptCCN"></xref><xref target="InterAdaptCCN"></xref>, as well as the possibilities and benefits of intelligent network management to improve the performance of AMS in ICN as well as the resulting QoE at the client.</t>
+
+<t>One of the most promising aspects in this context is the possibility of ICN to consume content from different origin nodes as well as over different network links in parallel, which can be seen as an intrinsic error resilience feature w.r.t. the network. This is a useful feature of ICN for adaptive multimedia streaming within mobile environments since most mobile devices are equipped with multiple network links. Here, a focus of ICN management could be in the load balancing of such traffic between the available links. This would increase the effective media throughput of the multimedia content, however, it could potentially lead to high variations of the resulting bandwidth which is available to the client. As DASH is designed for environments with dynamic bandwidth conditions, they can be compensated in general. However, more conservative adaptation algorithms may prevent too frequent switching between the content's bitrate representations as well as compensate short-term bandwidth drops caused by network link switches more smoothly.</t>
+
+
+
+</section>
+
 
 	</section>
 	
@@ -365,7 +382,6 @@
 
 	<section title="Network Policies" anchor="sec-anc-pol">
 
-	<t> TO BE UPDATED BY KOSTAS!</t>
 
 	<section title="NetInf Management Considerations" anchor="sec-netinf-mgmt">
 	
@@ -427,6 +443,76 @@
         &RFC6733;
 
       <!-- A reference written by by an organization not a person. -->
+
+
+
+
+
+<reference anchor="GIPR2013">
+            <front>
+                <title>Global Internet Phenomena Report 1H 2013</title>
+                <author initials="" surname="Sandivine" fullname="Sandivine"> <organization/>  </author> 		
+		<date year="2013"/>
+            </front>
+            <seriesInfo name="Sandvine Intelligent Broadband Networks" value=""/>
+        </reference>
+
+
+
+        <reference anchor="MPEG-DASH">
+            <front>
+                <title>The MPEG-DASH Standard for Multimedia Streaming Over the Internet</title>
+                <author initials="I." surname="Sodagar" fullname="I. Sodagar">
+                    <organization/>
+                </author>
+                <date year="2011" />
+            </front>
+            <seriesInfo name="IEEE MultiMedia, IEEE, vol.18, no.4, pp.62-67" value=""/>
+        </reference>
+
+
+        <reference anchor="AdaptCCN">
+            <front>
+                <title>Adaptive Streaming over Content Centric Networks in Mobile Networks using Multiple Links</title>
+                <author initials="S." surname="Lederer" fullname="S. Lederer">
+                    <organization/>
+                </author>
+			<author initials="C." surname="Mueler" fullname="C. Mueler">
+                    <organization/>
+                </author>
+			<author initials="B." surname="Rainer" fullname="B. Rainer">
+                    <organization/>
+                </author>
+			<author initials="C." surname="Timmerer" fullname="C. Timmerer">
+                    <organization/>
+                </author>
+			<author initials="H." surname="Hellwagner" fullname="H. Hellwagner">
+                    <organization/>
+                </author>
+                <date year="2013" month="June"/>
+            </front>
+            <seriesInfo name="Proceedings of the IEEE International Conference on Communication (ICC), Budapest, Hungary" value=""/>
+        </reference>
+
+ <reference anchor="InterAdaptCCN">
+            <front>
+                <title>On the Interaction of Adaptive Video Streaming with Content-Centric Networking</title>
+                <author initials="R." surname="Grandl" fullname="R. Grandl">
+                    <organization/>
+                </author>
+			<author initials="K." surname="Su" fullname="K. Su">
+                    <organization/>
+                </author>
+			<author initials="C." surname="Westphal" fullname="C. Westphal">
+                    <organization/>
+                </author>
+                <date year="2013" month="December"/>
+            </front>
+            <seriesInfo name="Proceedings of the 20th Packet Video Workshop 2013, San Jose, USA" value=""/>
+        </reference>
+
+
+
 
         <reference anchor="NDN-MGMT">
             <front>

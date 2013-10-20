@@ -5,13 +5,13 @@
 ICNRG                                                          D. Corujo
 Internet-Draft                             Instituto de Telecomunicacoes
 Intended status: Informational                            K. Pentikousis
-Expires: April 21, 2014                                             EICT
+Expires: April 23, 2014                                             EICT
                                                                 I. Vidal
                                                                     UC3M
                                                               S. Lederer
                                                                S. Spirou
                                                                     TODO
-                                                        October 18, 2013
+                                                        October 20, 2013
 
 
                      ICN Management Considerations
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Corujo, et al.           Expires April 21, 2014                 [Page 1]
+Corujo, et al.           Expires April 23, 2014                 [Page 1]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -63,7 +63,7 @@ Internet-Draft        ICN Management Considerations         October 2013
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 21, 2014.
+   This Internet-Draft will expire on April 23, 2014.
 
 Copyright Notice
 
@@ -82,8 +82,8 @@ Copyright Notice
 
 Table of Contents
 
-   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-   2.  ICN Management Considerations . . . . . . . . . . . . . . . .   3
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   3
+   2.  ICN Management Considerations . . . . . . . . . . . . . . . .   4
      2.1.  Face Management . . . . . . . . . . . . . . . . . . . . .   4
        2.1.1.  Towards a Management Framework for NDN  . . . . . . .   5
        2.1.2.  NDN Management Operations . . . . . . . . . . . . . .   7
@@ -91,14 +91,28 @@ Table of Contents
          2.1.2.2.  Management Data Exchange  . . . . . . . . . . . .   9
        2.1.3.  Implementation Experience . . . . . . . . . . . . . .  10
      2.2.  Video Adaptation  . . . . . . . . . . . . . . . . . . . .  11
-     2.3.  Content Management  . . . . . . . . . . . . . . . . . . .  11
-     2.4.  Network Policies  . . . . . . . . . . . . . . . . . . . .  11
-       2.4.1.  NetInf Management Considerations  . . . . . . . . . .  11
-   3.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  12
-   4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  12
-   5.  Security Considerations . . . . . . . . . . . . . . . . . . .  12
-   6.  Informative References  . . . . . . . . . . . . . . . . . . .  12
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  13
+       2.2.1.  Adaptive Delivery of Multimedia Content in ICN  . . .  11
+     2.3.  Content Management  . . . . . . . . . . . . . . . . . . .  12
+     2.4.  Network Policies  . . . . . . . . . . . . . . . . . . . .  13
+       2.4.1.  NetInf Management Considerations  . . . . . . . . . .  13
+   3.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  13
+   4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  13
+   5.  Security Considerations . . . . . . . . . . . . . . . . . . .  13
+   6.  Informative References  . . . . . . . . . . . . . . . . . . .  13
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  15
+
+
+
+
+
+
+
+
+
+Corujo, et al.           Expires April 23, 2014                 [Page 2]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
 
 1.  Introduction
 
@@ -106,14 +120,6 @@ Table of Contents
    addressing, privacy, security, and trust, and should also lead us to
    think new ways for deploying, operating and managing networks in the
    future.  By default, users, programs, information objects and hosts
-
-
-
-Corujo, et al.           Expires April 21, 2014                 [Page 2]
-
-Internet-Draft        ICN Management Considerations         October 2013
-
-
    are in general untrustworthy and mobile in an information-centric
    network.  This means that many of the assumptions in traditional
    network management, including all aspects of FCAPS (Fault,
@@ -153,6 +159,17 @@ Internet-Draft        ICN Management Considerations         October 2013
    Face Management Section 2.1, Video Adaptation Section 2.2, Content
    Management Section 2.3and Network Policies Section 2.4.
 
+
+
+
+
+
+
+Corujo, et al.           Expires April 23, 2014                 [Page 3]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
    We plan to incrementally develop the draft, incorporating
    considerations on other ICN aspects as well as different approaches
    (e.g., [PURSUIT] and [NetInf]) as well as address other pertinent
@@ -162,14 +179,6 @@ Internet-Draft        ICN Management Considerations         October 2013
 
    This section addresses management considerations regarding specific
    ICN deployments and scenarios, by analyzing the opportunities,
-
-
-
-Corujo, et al.           Expires April 21, 2014                 [Page 3]
-
-Internet-Draft        ICN Management Considerations         October 2013
-
-
    requirements and possibilities for management deployment therein.
    This analysis starts with the proposal of a NDN-based face management
    framework, followed by considerations from video adaptation, content
@@ -209,6 +218,14 @@ Internet-Draft        ICN Management Considerations         October 2013
        packet is consumed, and a Data packet with the respective content
        is sent towards the request origin.
 
+
+
+
+Corujo, et al.           Expires April 23, 2014                 [Page 4]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
    2.  Pending Interest Table (PIT): keeps track of Interest packets
        seen previously by the node, on their way to locate matching
        content.  Interest packets in the PIT were not matched to content
@@ -218,14 +235,6 @@ Internet-Draft        ICN Management Considerations         October 2013
 
    3.  Forward Information Base (FIB): associates named data to
        potential holders of the content.  A routing protocol can
-
-
-
-Corujo, et al.           Expires April 21, 2014                 [Page 4]
-
-Internet-Draft        ICN Management Considerations         October 2013
-
-
        populate the FIB (although this is outside the scope of NDN) or
        it can be populated through registration in a local NDN store.
 
@@ -265,6 +274,14 @@ Internet-Draft        ICN Management Considerations         October 2013
    [RFC1157], [RFC6733]), or Operation Support Services (OSS) web
    services.  The client point of view of the network includes
    information that, for example, a wireless terminal can provide,
+
+
+
+Corujo, et al.           Expires April 23, 2014                 [Page 5]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
    indicating wireless link quality, average return-trip times (RTT) or
    perceived Quality of Experience (QoE).
 
@@ -274,14 +291,6 @@ Internet-Draft        ICN Management Considerations         October 2013
    as well as from user nodes.  One way to generate management
    information in network entities and at client nodes, as well as to
    consume and act upon it (i.e., using the management information
-
-
-
-Corujo, et al.           Expires April 21, 2014                 [Page 5]
-
-Internet-Draft        ICN Management Considerations         October 2013
-
-
    exchange as a control channel) is to couple NDN nodes with Management
    Agent (MA) entities.
 
@@ -321,6 +330,14 @@ Internet-Draft        ICN Management Considerations         October 2013
             Figure 1.  NDN Management Framework
 
 
+
+
+
+Corujo, et al.           Expires April 23, 2014                 [Page 6]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
    MA can interface with the PIT and FIB structures, acting as a
    dynamic, application- and/or network-controlled interface to the
    strategy layer.  This could also be used to direct how to forward NDN
@@ -330,14 +347,6 @@ Internet-Draft        ICN Management Considerations         October 2013
    also to collect information (i.e., an informational event regarding
    detected access points).  Finally, the MA can also interface with
    application processes, drawing out information about the perceived
-
-
-
-Corujo, et al.           Expires April 21, 2014                 [Page 6]
-
-Internet-Draft        ICN Management Considerations         October 2013
-
-
    QoS/QoE (e.g., lost packets or delay from a real-time video feed) and
    also to execute commands, such as selecting a better video codec when
    the network commands the video flow to be accessed from a different
@@ -377,22 +386,17 @@ Internet-Draft        ICN Management Considerations         October 2013
    network, the management entities need to become aware of the
    management capabilities of the newly-connected node.  In addition, an
    asynchronous information exchange capability needs to be provided,
-   allowing not only the request of management information, but also the
-   ability to push information towards a remote node (i.e., sending a
-   command or an informational event).
 
 
 
-
-
-
-
-
-
-Corujo, et al.           Expires April 21, 2014                 [Page 7]
+Corujo, et al.           Expires April 23, 2014                 [Page 7]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
+
+   allowing not only the request of management information, but also the
+   ability to push information towards a remote node (i.e., sending a
+   command or an informational event).
 
 2.1.2.1.  Discovery Procedure
 
@@ -438,18 +442,18 @@ Internet-Draft        ICN Management Considerations         October 2013
           Figure 2. Secure Management Session Establishment
 
 
-   The "mgmt-case" part of the name can be used to select different
-   aspects of management capabilities allowed by a Management Entity
-   (ME) (i.e., a management decision point in the network).  The ME then
-   replies to this Interest with a Data packet (Fig. 2:2), providing its
 
 
 
-Corujo, et al.           Expires April 21, 2014                 [Page 8]
+Corujo, et al.           Expires April 23, 2014                 [Page 8]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
 
+   The "mgmt-case" part of the name can be used to select different
+   aspects of management capabilities allowed by a Management Entity
+   (ME) (i.e., a management decision point in the network).  The ME then
+   replies to this Interest with a Data packet (Fig. 2:2), providing its
    shorthand identifier (i.e., ME-publisher-key) and a key locator,
    indicating how to retrieve its public key (assuming it is authorized
    by another key trusted by the UE).  In this way, the MA at the UE
@@ -494,18 +498,18 @@ Internet-Draft        ICN Management Considerations         October 2013
    In this case, the MA intends to push management information to the
    ME.  It does so via an Interest packet manifesting its interest in
    receiving management content with a local sequence number.  This
-   sequencing allows the recovery of new content over cached content.
-   If the ME is interested in retrieving content from the MA, it answers
-   back with a Data packet, where it indicates that it is willing to
-   receive management content.  Then, the ME sends an Interest packet to
 
 
 
-Corujo, et al.           Expires April 21, 2014                 [Page 9]
+Corujo, et al.           Expires April 23, 2014                 [Page 9]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
 
+   sequencing allows the recovery of new content over cached content.
+   If the ME is interested in retrieving content from the MA, it answers
+   back with a Data packet, where it indicates that it is willing to
+   receive management content.  Then, the ME sends an Interest packet to
    retrieve the management data with the sequence number provided by the
    MA, which responds with a Data packet containing the information it
    wanted to push into the ME.
@@ -550,18 +554,18 @@ Internet-Draft        ICN Management Considerations         October 2013
    entails configuring and selecting an appropriate face in a UE to
    retrieve a given content.  Based on the CCNx, an evaluation test-bed
    was deployed including an NDN UE (featuring an MA and a set of
-   network interfaces), a content server and a network node (featuring
-   an ME).  These entities are interconnected by a set of NDN routers.
-   The purpose of the evaluation scenario is to demonstrate feasibility
-   for the protocol exchanges mentioned earlier.  Note that the code has
 
 
 
-Corujo, et al.           Expires April 21, 2014                [Page 10]
+Corujo, et al.           Expires April 23, 2014                [Page 10]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
 
+   network interfaces), a content server and a network node (featuring
+   an ME).  These entities are interconnected by a set of NDN routers.
+   The purpose of the evaluation scenario is to demonstrate feasibility
+   for the protocol exchanges mentioned earlier.  Note that the code has
    been tested in a small-scale environment where the ME is topology-
    aware and keeps track of conditions of the access networks that are
    available to the UE.  Thus, the ME can provide the MA with management
@@ -582,15 +586,95 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 2.2.  Video Adaptation
 
-   TO BE UPDATED BY STEFAN!
+   This section investigates ICN management considerations for the
+   delivery of video data, and especially the adaptive delivery of
+   video.  From a content perspective, multimedia is omnipresent in the
+   Internet, e.g., producing 62% of the total Internet traffic in North
+   America's fixed access networks [GIPR2013].
+
+   Video, and multimedia content in general, is has specific
+   characteristics, which have to be considered and where network
+   management consideration are necessary.  The consumption of
+   multimedia content comes along with timing requirements for the
+   delivery of the content, for both, live and on-demand consumption.
+   Long startup delays, buffering periods or poor quality, etc. should
+   be avoided to achieve a good Quality of Experience of the consumer of
+   the content.  Of course, these requirements are heavily influenced by
+   routing decision and caching, which are central parts of ICN, and
+   which may be leveraged more efficiently by an intelligent network
+   management.
+
+2.2.1.  Adaptive Delivery of Multimedia Content in ICN
+
+   Today's dominant streaming systems are based on the common approach
+   of leveraging HTTP-based Internet infrastructures, which are
+   consequently based on the Transmission Control Protocol (TCP) and the
+   Internet Protocol (IP).  Especially the adaptive multimedia streaming
+
+
+
+Corujo, et al.           Expires April 23, 2014                [Page 11]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
+   (AMS) via HTTP is gaining more and more momentum and resulted in the
+   standardization of MPEG-DASH [MPEG-DASH], which stands for Dynamic
+   Adaptive Streaming over HTTP.  The basic idea of AHS is to split up
+   the media file into segments of equal length, which can be encoded at
+   different resolutions, bitrates, etc.  The segments are stored on
+   conventional HTTP Web server and can be accessed through HTTP GET
+   requests from the client.  Due to this, the streaming system is pull
+   based and the entire streaming logic is on the client side.  This
+   means that the client fully controls the bitrate of the streaming
+   media on a per-segment basis, which has several advantages, e.g., the
+   client knows its bandwidth requirements and capabilities best.  As
+   one can see, ICN and adaptive multimedia streaming have several
+   elements in common, such as the client-initiated pull approach, the
+   content being dealt with in pieces as well as the support of
+   efficient replication and distribution of content pieces within the
+   network.  As ICN is a promising candidate for the Future Internet
+   (FI) architecture, it is useful to investigate its suitability in
+   combination with AMS systems and standards like MPEG-DASH as shown in
+   [AdaptCCN][InterAdaptCCN], as well as the possibilities and benefits
+   of intelligent network management to improve the performance of AMS
+   in ICN as well as the resulting QoE at the client.
+
+   One of the most promising aspects in this context is the possibility
+   of ICN to consume content from different origin nodes as well as over
+   different network links in parallel, which can be seen as an
+   intrinsic error resilience feature w.r.t. the network.  This is a
+   useful feature of ICN for adaptive multimedia streaming within mobile
+   environments since most mobile devices are equipped with multiple
+   network links.  Here, a focus of ICN management could be in the load
+   balancing of such traffic between the available links.  This would
+   increase the effective media throughput of the multimedia content,
+   however, it could potentially lead to high variations of the
+   resulting bandwidth which is available to the client.  As DASH is
+   designed for environments with dynamic bandwidth conditions, they can
+   be compensated in general.  However, more conservative adaptation
+   algorithms may prevent too frequent switching between the content's
+   bitrate representations as well as compensate short-term bandwidth
+   drops caused by network link switches more smoothly.
 
 2.3.  Content Management
 
    TO BE UPDATED BY SPIROU!
 
-2.4.  Network Policies
 
-   TO BE UPDATED BY KOSTAS!
+
+
+
+
+
+
+
+Corujo, et al.           Expires April 23, 2014                [Page 12]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
+2.4.  Network Policies
 
 2.4.1.  NetInf Management Considerations
 
@@ -610,14 +694,6 @@ Internet-Draft        ICN Management Considerations         October 2013
    involved in decisions about caching and (re)distribution of content,
    and not only whether an (inter)face is on or off, or what traffic
    limits should be enforced.  Moreover, network policies can be
-
-
-
-Corujo, et al.           Expires April 21, 2014                [Page 11]
-
-Internet-Draft        ICN Management Considerations         October 2013
-
-
    distributed securely in the same way as other content in the network,
    removing the need for centralized management, and enabling improved
    recovery procedures.  Second, network management can get involved in
@@ -642,15 +718,45 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 6.  Informative References
 
+   [AdaptCCN]
+              Lederer, S., Mueler, C., Rainer, B., Timmerer, C., and H.
+              Hellwagner, "Adaptive Streaming over Content Centric
+              Networks in Mobile Networks using Multiple Links",
+
+
+
+Corujo, et al.           Expires April 23, 2014                [Page 13]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
+              Proceedings of the IEEE International Conference on
+              Communication (ICC), Budapest, Hungary , June 2013.
+
    [CCNx]     PARC, "CCNx Project", 2013, <http://www.ccnx.org>.
 
    [DONA]     Koponen, T. et al., "A Data-Oriented (and Beyond) Network
               Architecture", SIGCOMM, ACM , 2007.
 
+   [GIPR2013]
+              Sandivine, ., "Global Internet Phenomena Report 1H 2013",
+              Sandvine Intelligent Broadband Networks , 2013.
+
    [ICN-Scenarios]
               Pentikousis, K., Ohlman, B., Corujo, D., and G. Boggia,
               "ICN Baseline Scenarios", draft-pentikousis-icn-scenarios
               (work in progress), February 2013.
+
+   [InterAdaptCCN]
+              Grandl, R., Su, K., and C. Westphal, "On the Interaction
+              of Adaptive Video Streaming with Content-Centric
+              Networking", Proceedings of the 20th Packet Video Workshop
+              2013, San Jose, USA , December 2013.
+
+   [MPEG-DASH]
+              Sodagar, I., "The MPEG-DASH Standard for Multimedia
+              Streaming Over the Internet", IEEE MultiMedia, IEEE,
+              vol.18, no.4, pp.62-67 , 2011.
 
    [NDN-MGMT]
               Corujo, D., Vidal, I., Garcia-Reinoso, J., and R. Aguiar,
@@ -667,16 +773,18 @@ Internet-Draft        ICN Management Considerations         October 2013
               Steward, P., and J. Thornton, "VoCCN: Voice Over Content-
               Centric Networks", ReARCH 2009, Rome , Dec 2009.
 
-
-
-Corujo, et al.           Expires April 21, 2014                [Page 12]
-
-Internet-Draft        ICN Management Considerations         October 2013
-
-
    [NDNFlexManager]
               UC3M and ITAV, "Framework for Flexible NDN Management",
               2013, <https://github.com/ndnflexmanager/framework>.
+
+
+
+
+
+Corujo, et al.           Expires April 23, 2014                [Page 14]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
 
    [NDN]      Jacobson, V., Smetters, D., Thornton, J., Plass, M.,
               Briggss, N., and R. Braynard, "Networking Named Content",
@@ -719,17 +827,6 @@ Authors' Addresses
    Email: dcorujo@av.it.pt
 
 
-
-
-
-
-
-
-Corujo, et al.           Expires April 21, 2014                [Page 13]
-
-Internet-Draft        ICN Management Considerations         October 2013
-
-
    Kostas Pentikousis
    EICT GmbH
    Torgauer Strabe 12-15
@@ -737,6 +834,12 @@ Internet-Draft        ICN Management Considerations         October 2013
    Germany
 
    Email: k.pentikousis@eict.de
+
+
+
+Corujo, et al.           Expires April 23, 2014                [Page 15]
+
+Internet-Draft        ICN Management Considerations         October 2013
 
 
    Ivan Vidal
@@ -781,4 +884,13 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 21, 2014                [Page 14]
+
+
+
+
+
+
+
+
+
+Corujo, et al.           Expires April 23, 2014                [Page 16]
