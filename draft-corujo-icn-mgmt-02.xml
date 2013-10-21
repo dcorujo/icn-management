@@ -106,16 +106,18 @@
           </author>
           
       <author fullname="Stefan Lederer" initials="S.L." surname="Lederer">
-              <organization>TODO</organization>
+              <organization>Alpen-Adria Universitat Klagenfurt</organization>
               <address>
                   <postal>
-                      <street>TODO</street>
-                      <city>TODO</city>
-                      <country>TODO</country>
+                      <street>Universitatsstrasse 65-67</street>
+                      <city>Klagenfurt</city>
+                      <country>Austria</country>
                   </postal>
-                  <email>stefan.lederer@bitmovin.com</email>
+                  <email>stefan.lederer@itec.aau.at</email>
               </address>
           </author>
+
+
 
        <author fullname="Spiros Spirou" initials="S.S." surname="Spirou">
               <organization>TODO</organization>
