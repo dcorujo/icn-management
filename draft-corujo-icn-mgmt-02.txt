@@ -5,13 +5,14 @@
 ICNRG                                                          D. Corujo
 Internet-Draft                             Instituto de Telecomunicacoes
 Intended status: Informational                            K. Pentikousis
-Expires: April 23, 2014                                             EICT
+Expires: April 24, 2014                                             EICT
                                                                 I. Vidal
                                                                     UC3M
                                                               S. Lederer
+                                      Alpen-Adria Universitat Klagenfurt
                                                                S. Spirou
-                                                                    TODO
-                                                        October 20, 2013
+                                                        Intracom Telecom
+                                                        October 21, 2013
 
 
                      ICN Management Considerations
@@ -47,23 +48,20 @@ Status of This Memo
    working documents as Internet-Drafts.  The list of current Internet-
    Drafts is at http://datatracker.ietf.org/drafts/current/.
 
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
 
 
 
-
-
-
-Corujo, et al.           Expires April 23, 2014                 [Page 1]
+Corujo, et al.           Expires April 24, 2014                 [Page 1]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
 
-   Internet-Drafts are draft documents valid for a maximum of six months
-   and may be updated, replaced, or obsoleted by other documents at any
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 23, 2014.
+   This Internet-Draft will expire on April 24, 2014.
 
 Copyright Notice
 
@@ -82,7 +80,7 @@ Copyright Notice
 
 Table of Contents
 
-   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   3
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  ICN Management Considerations . . . . . . . . . . . . . . . .   4
      2.1.  Face Management . . . . . . . . . . . . . . . . . . . . .   4
        2.1.1.  Towards a Management Framework for NDN  . . . . . . .   5
@@ -96,23 +94,10 @@ Table of Contents
      2.4.  Network Policies  . . . . . . . . . . . . . . . . . . . .  13
        2.4.1.  NetInf Management Considerations  . . . . . . . . . .  13
    3.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  13
-   4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  13
-   5.  Security Considerations . . . . . . . . . . . . . . . . . . .  13
-   6.  Informative References  . . . . . . . . . . . . . . . . . . .  13
+   4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  14
+   5.  Security Considerations . . . . . . . . . . . . . . . . . . .  14
+   6.  Informative References  . . . . . . . . . . . . . . . . . . .  14
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  15
-
-
-
-
-
-
-
-
-
-Corujo, et al.           Expires April 23, 2014                 [Page 2]
-
-Internet-Draft        ICN Management Considerations         October 2013
-
 
 1.  Introduction
 
@@ -121,6 +106,14 @@ Internet-Draft        ICN Management Considerations         October 2013
    think new ways for deploying, operating and managing networks in the
    future.  By default, users, programs, information objects and hosts
    are in general untrustworthy and mobile in an information-centric
+
+
+
+Corujo, et al.           Expires April 24, 2014                 [Page 2]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
    network.  This means that many of the assumptions in traditional
    network management, including all aspects of FCAPS (Fault,
    Configuration, Accounting, Performance, and Security) need to be
@@ -159,21 +152,23 @@ Internet-Draft        ICN Management Considerations         October 2013
    Face Management Section 2.1, Video Adaptation Section 2.2, Content
    Management Section 2.3and Network Policies Section 2.4.
 
-
-
-
-
-
-
-Corujo, et al.           Expires April 23, 2014                 [Page 3]
-
-Internet-Draft        ICN Management Considerations         October 2013
-
-
    We plan to incrementally develop the draft, incorporating
    considerations on other ICN aspects as well as different approaches
    (e.g., [PURSUIT] and [NetInf]) as well as address other pertinent
    aspects as we receive feedback from the research group members.
+
+
+
+
+
+
+
+
+
+Corujo, et al.           Expires April 24, 2014                 [Page 3]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
 
 2.  ICN Management Considerations
 
@@ -221,7 +216,12 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 23, 2014                 [Page 4]
+
+
+
+
+
+Corujo, et al.           Expires April 24, 2014                 [Page 4]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -277,7 +277,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 23, 2014                 [Page 5]
+Corujo, et al.           Expires April 24, 2014                 [Page 5]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -333,7 +333,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 23, 2014                 [Page 6]
+Corujo, et al.           Expires April 24, 2014                 [Page 6]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -389,7 +389,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 23, 2014                 [Page 7]
+Corujo, et al.           Expires April 24, 2014                 [Page 7]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -445,7 +445,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 23, 2014                 [Page 8]
+Corujo, et al.           Expires April 24, 2014                 [Page 8]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -501,7 +501,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 23, 2014                 [Page 9]
+Corujo, et al.           Expires April 24, 2014                 [Page 9]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -557,7 +557,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 23, 2014                [Page 10]
+Corujo, et al.           Expires April 24, 2014                [Page 10]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -613,7 +613,7 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-Corujo, et al.           Expires April 23, 2014                [Page 11]
+Corujo, et al.           Expires April 24, 2014                [Page 11]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
@@ -659,20 +659,34 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 2.3.  Content Management
 
-   TO BE UPDATED BY SPIROU!
+   An ICN network aims by definition to facilitate access to and
+   delivery of information objects (content and services).  An ICN
+   network can certainly do more, as it has been discussed in earlier
+   sections.  However, as content (in particular, video) access and
+   delivery seems to be the dominant use case in current host-based
+   networks, ICN networking carries content delivery as a minimum
+   requirement.  Indeed, virtually all ICN approaches so far include
 
 
 
-
-
-
-
-
-
-Corujo, et al.           Expires April 23, 2014                [Page 12]
+Corujo, et al.           Expires April 24, 2014                [Page 12]
 
 Internet-Draft        ICN Management Considerations         October 2013
 
+
+   content delivery as a premise.  In that respect, from the perspective
+   of a content owner or provider, an ICN network functions essentially
+   as a content delivery network.  This creates a set of extra
+   requirements for ICN.  Not surprisingly, content providers and end
+   users alike should be able to Read (consume) a content object
+   available on the ICN network.  But, in addition, a content provider
+   needs the ability to Create (publish), Update, and Delete content.
+   In this way, these three operations (Create, Update, and Delete)
+   stand as the core aspects whose implications on ICN have to be
+   considered.  For example, it's not obvious how content can be deleted
+   from an ICN network that makes extensive use of in-network caching.
+   In addition, Accounting, which is typical required by any service
+   provider, also needs to be tackled.
 
 2.4.  Network Policies
 
@@ -708,6 +722,14 @@ Internet-Draft        ICN Management Considerations         October 2013
 
    Jaime Garcia-Reinoso (UC3M); Section 2.1.3
 
+
+
+
+Corujo, et al.           Expires April 24, 2014                [Page 13]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
 4.  IANA Considerations
 
    This memo includes no request to IANA.
@@ -722,14 +744,6 @@ Internet-Draft        ICN Management Considerations         October 2013
               Lederer, S., Mueler, C., Rainer, B., Timmerer, C., and H.
               Hellwagner, "Adaptive Streaming over Content Centric
               Networks in Mobile Networks using Multiple Links",
-
-
-
-Corujo, et al.           Expires April 23, 2014                [Page 13]
-
-Internet-Draft        ICN Management Considerations         October 2013
-
-
               Proceedings of the IEEE International Conference on
               Communication (ICC), Budapest, Hungary , June 2013.
 
@@ -764,6 +778,14 @@ Internet-Draft        ICN Management Considerations         October 2013
               communications", Communications Magazine, IEEE , vol.50,
               no.12, pp.36-43 , Dec 2012.
 
+
+
+
+Corujo, et al.           Expires April 24, 2014                [Page 14]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
    [NDN-R]    Zhang, L. et al., "Named Data Networking (NDN) Project",
               NDN Report ndn-0001, Tech Report, PARC , 2010,
               <http://www.named-data.net/techreport/TR001ndn-proj.pdf>.
@@ -776,15 +798,6 @@ Internet-Draft        ICN Management Considerations         October 2013
    [NDNFlexManager]
               UC3M and ITAV, "Framework for Flexible NDN Management",
               2013, <https://github.com/ndnflexmanager/framework>.
-
-
-
-
-
-Corujo, et al.           Expires April 23, 2014                [Page 14]
-
-Internet-Draft        ICN Management Considerations         October 2013
-
 
    [NDN]      Jacobson, V., Smetters, D., Thornton, J., Plass, M.,
               Briggss, N., and R. Braynard, "Networking Named Content",
@@ -817,6 +830,18 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 Authors' Addresses
 
+
+
+
+
+
+
+
+Corujo, et al.           Expires April 24, 2014                [Page 15]
+
+Internet-Draft        ICN Management Considerations         October 2013
+
+
    Daniel Corujo
    Instituto de Telecomunicacoes
    Campus Universitario de Santiago
@@ -836,12 +861,6 @@ Authors' Addresses
    Email: k.pentikousis@eict.de
 
 
-
-Corujo, et al.           Expires April 23, 2014                [Page 15]
-
-Internet-Draft        ICN Management Considerations         October 2013
-
-
    Ivan Vidal
    UC3M
    Av de la Universidad, 30
@@ -852,18 +871,18 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
    Stefan Lederer
-   TODO
-   TODO
-   TODO
-   TODO
+   Alpen-Adria Universitat Klagenfurt
+   Universitatsstrasse 65-67
+   Klagenfurt
+   Austria
 
-   Email: stefan.lederer@bitmovin.com
+   Email: stefan.lederer@itec.aau.at
 
 
    Spiros Spirou
-   TODO
-   TODO
-   TODO
+   Intracom Telecom
+   19.7 km Markopoulou Avenue
+   Peania  19002
    Greece
 
    Email: spis@intracom.com
@@ -874,23 +893,4 @@ Internet-Draft        ICN Management Considerations         October 2013
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Corujo, et al.           Expires April 23, 2014                [Page 16]
+Corujo, et al.           Expires April 24, 2014                [Page 16]

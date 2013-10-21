@@ -118,19 +118,18 @@
           </author>
 
 
-
-       <author fullname="Spiros Spirou" initials="S.S." surname="Spirou">
-              <organization>TODO</organization>
-              <address>
-                  <postal>
-                      <street>TODO</street>
-                      <city>TODO</city>
-                      <country>Greece</country>
-                  </postal>
-                  <email>spis@intracom.com</email>
-              </address>
-          </author>
- 
+<author fullname="Spiros Spirou" initials="S.S." surname="Spirou">
+		<organization>Intracom Telecom</organization>
+		<address>
+			<postal>
+				<street>19.7 km Markopoulou Avenue</street>
+				<code>19002</code>
+				<city>Peania</city>
+				<country>Greece</country>
+			</postal>
+			<email>spis@intracom.com</email>
+		</address>
+	</author> 
 
     <date year="2013" />
 
@@ -377,7 +376,7 @@ Video, and multimedia content in general, is has specific characteristics, which
 	
 	<section title="Content Management" anchor="sec-con-man">
 
-	<t> TO BE UPDATED BY SPIROU!</t>
+	<t>An ICN network aims by definition to facilitate access to and delivery of information objects (content and services). An ICN network can certainly do more, as it has been discussed in earlier sections. However, as content (in particular, video) access and delivery seems to be the dominant use case in current host-based networks, ICN networking carries content delivery as a minimum requirement. Indeed, virtually all ICN approaches so far include content delivery as a premise. In that respect, from the perspective of a content owner or provider, an ICN network functions essentially as a content delivery network.  This creates a set of extra requirements for ICN. Not surprisingly, content providers and end users alike should be able to Read (consume) a content object available on the ICN network. But, in addition, a content provider needs the ability to Create (publish), Update, and Delete content. In this way, these three operations (Create, Update, and Delete) stand as the core aspects whose implications on ICN have to be considered. For example, it's not obvious how content can be deleted from an ICN network that makes extensive use of in-network caching. In addition, Accounting, which is typical required by any service provider, also needs to be tackled.</t>
 
 	</section>
 
