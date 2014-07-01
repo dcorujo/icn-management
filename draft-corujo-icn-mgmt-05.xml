@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!-- This template is for creating an Internet Draft using xml2rfc,
+     which is available here: http://xml.resource.org. -->
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
+<!-- One method to get references from the online citation libraries.
+     There has to be one entity for each item to be referenced. 
+     An alternate method (rfc include) is described in the references. -->
+
+<!ENTITY RFC3552 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3552.xml">
+<!ENTITY RFC5226 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5226.xml">
+<!ENTITY RFC1157 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.1157.xml">
+<!ENTITY RFC6733 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6733.xml">
+]>
+<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
+<!-- used by XSLT processors -->
+<!-- For a complete list and description of processing instructions (PIs), 
+     please see http://xml.resource.org/authoring/README.html. -->
+<!-- Below are generally applicable Processing Instructions (PIs) that most I-Ds might want to use.
+     (Here they are set differently than their defaults in xml2rfc v1.32) -->
+<?rfc strict="yes" ?>
+<!-- give errors regarding ID-nits and DTD validation -->
+<!-- control the table of contents (ToC) -->
+<?rfc toc="yes"?>
+<!-- generate a ToC -->
+<?rfc tocdepth="4"?>
+<!-- the number of levels of subsections in ToC. default: 3 -->
+<!-- control references -->
+<?rfc symrefs="yes"?>
+<!-- use symbolic references tags, i.e, [RFC2119] instead of [1] -->
+<?rfc sortrefs="yes" ?>
+<!-- sort the reference entries alphabetically -->
+<!-- control vertical white space 
+     (using these PIs as follows is recommended by the RFC Editor) -->
+<?rfc compact="yes" ?>
+<!-- do not start each main section on a new page -->
+<?rfc subcompact="no" ?>
+<!-- keep one blank line between list items -->
+<!-- end of list of popular I-D processing instructions -->
+<rfc category="info" docName="draft-corujo-icn-mgmt-05" ipr="trust200902">
+  <!-- category values: std, bcp, info, exp, and historic
+     ipr values: trust200902, noModificationTrust200902, noDerivativesTrust200902,
+        or pre5378Trust200902
+     you can add the attributes updates="NNNN" and obsoletes="NNNN" 
+     they will automatically be output with "(if approved)" -->
+
+  <!-- ***** FRONT MATTER ***** -->
+
+  <front>
+    <!-- The abbreviated title is used in the page header - it is only necessary if the 
+         full title is longer than 39 characters -->
+
+    <title abbrev="ICN Management Considerations">ICN Management Considerations</title>
+
+    <!-- add 'role="editor"' below for the editors if appropriate -->
+
+    <!-- Another author who claims to be an editor -->
+
+      <author fullname="Daniel Corujo" initials="D." surname="Corujo">
+          <organization>Instituto de Telecomunicacoes</organization>
+          
+          <address>
+              <postal>
+                  <street>Campus Universitario de Santiago</street>
+                  
+                  <!-- Reorder these if your country does things differently -->
+                  
+                  <city>Aveiro</city>
+                  
+                  <region></region>
+                  
+                  <code>P-3810-193 Aveiro</code>
+                  
+                  <country>Portugal</country>
+              </postal>
+              
+              <phone>+351 234 377 900</phone>
+              
+              <email>dcorujo@av.it.pt</email>
+              
+              <!-- uri and facsimile elements may also be added -->
+          </address>
+      </author>
+      
+<author fullname="Kostas Pentikousis" initials="K." surname="Pentikousis">
+ <organization abbrev="EICT">EICT GmbH</organization>
+ <address>
+	  <postal>
+		  <street>Torgauer Strabe 12-15</street>
+		  <city>10829 Berlin</city>
+		  <country>Germany</country>
+	  </postal>
+	  <email>k.pentikousis@eict.de</email>
+ </address>
+</author>
+
+      <author fullname="Ivan Vidal" initials="I." surname="Vidal">
+              <organization>UC3M</organization>
+              <address>
+                  <postal>
+                      <street>Av de la Universidad, 30</street>
+                      <city>28911 Leganes, Madrid</city>
+                      <country>Spain</country>
+                  </postal>
+                  <email>ividal@it.uc3m.es</email>
+              </address>
+          </author>
+         
+      <author fullname="Jaime Garcia-Reinoso" initials="J." surname="Garcia-Reinoso">
+              <organization>UC3M</organization>
+              <address>
+                  <postal>
+                      <street>Av de la Universidad, 30</street>
+                      <city>28911 Leganes, Madrid</city>
+                      <country>Spain</country>
+                  </postal>
+                  <email>jgr@it.uc3m.es</email>
+              </address>
+          </author>
+ 
+ 
+      <author fullname="Stefan Lederer" initials="S." surname="Lederer">
+              <organization>Alpen-Adria Universitat Klagenfurt</organization>
+              <address>
+                  <postal>
+                      <street>Universitatsstrasse 65-67</street>
+                      <city>Klagenfurt</city>
+                      <country>Austria</country>
+                  </postal>
+                  <email>stefan.lederer@itec.aau.at</email>
+              </address>
+          </author>
+
+
+<author fullname="Spiros Spirou" initials="S." surname="Spirou">
+		<organization>Intracom Telecom</organization>
+		<address>
+			<postal>
+				<street>19.7 km Markopoulou Avenue</street>
+				<code>19002</code>
+				<city>Peania</city>
+				<country>Greece</country>
+			</postal>
+			<email>spis@intracom.com</email>
+		</address>
+	</author> 
+
+<author fullname="Cedric Westphal" initials="C." surname="Westphal">
+ <organization>Huawei</organization>
+ <address>
+	  <postal>
+		  <street>2330 Central Expressway</street>
+		  <city>Santa Clara, CA95050</city>
+		  <country>USA</country>
+	  </postal>
+	  <email>cedric.westphal@huawei.com</email>
+ </address>
+</author>
+
+
+
+    <date year="2014" />
+
+    <!-- If the month and year are both specified and are the current ones, xml2rfc will fill 
+         in the current day for you. If only the current year is specified, xml2rfc will fill 
+	 in the current day and month for you. If the year is not the current one, it is 
+	 necessary to specify at least a month (xml2rfc assumes day="1" if not specified for the 
+	 purpose of calculating the expiry date).  With drafts it is normally sufficient to 
+	 specify just the year. -->
+
+    <!-- Meta-data Declarations -->
+
+    <area>General</area>
+
+    <workgroup>ICNRG</workgroup>
+
+    <!-- WG name at the upperleft corner of the doc,
+         IETF is fine for individual submissions.  
+	 If this element is not present, the default is "Network Working Group",
+         which is used by the RFC Editor as a nod to the history of the IETF. -->
+
+    <keyword>ICN; Network Management</keyword>
+
+    <!-- Keywords will be incorporated into HTML output
+         files in a meta tag but they have no effect on text or nroff
+         output. If you submit your draft to the RFC Editor, the
+         keywords will be used for the search engine. -->
+
+    <abstract>
+	<t>ICN has been proposing and evaluating novel ways for reaching on-line content in upcoming Future Internet environments, leveraging intrinsic capabilities such as naming, caching and built-in security. In order to fully realize the capabilities and vision provided by ICN, supportive management procedures need to be ensured, providing the architectures, and the elements that figure in them, with the means to facilitate the delivery of content and the operation of the network. In the current Internet, these management aspects have been being developed and enhanced in parallel to the existing data protocol and mechanisms, resulting in a plethora of different and hard-to-integrate approaches, but still fulfil indispensable roles and actions for the operation and well-being of the network. We consider that the availability of management mechanisms for ICN will foster deployment and, as such, should be tackled still in the design and experimentation phases. In this way, this document addresses and identifies ICN management considerations, under two different settings: a) achieving management operations using ICN-based mechanisms and, b) how to manage ICN procedures themselves. The ultimate goal is to provide the necessary breadth to establish management mechanisms deployment guidelines in a common way throughout the existing ICN ecosystem of architectures.</t>
+ 
+    </abstract>
+  </front>
+
+  <middle>
+    <section title="Introduction">
+	<t>Information-centric networking (ICN) enables new ideas for naming and addressing, privacy, security, and trust, and should also lead us to think new ways for deploying, operating and managing networks in the future. By default, users, programs, information objects and hosts are in general untrustworthy and mobile in an information-centric network. This means that many of the assumptions in traditional network management, including all aspects of FCAPS (Fault, Configuration, Accounting, Performance, and Security) need to be rethought. However, despite the different instantiations of ICN architectures, and the plethora of novel research work built on top of them, little attention has been paid to management aspects so far. This includes both enabling "traditional" network management operations (which work well from small networks to large infrastructure networks), and supporting and optimizing intrinsic procedures of the ICN fabric.</t>
+		
+		<t>This document aims to draw the attention of ICNRG to the importance of network management for real-world deployments. Today, network management is practically an add-on to host-centric deployments. We can do better as we move forward in ICN research considering the full range of deployments from home-office environments to challenged networks to tier-1 networks. To this end, we draft some first management considerations that, on the one hand, capitalize on ICN concepts for defining management procedures and, on the other, explore the possibilities for defining a common management framework irrespective of the ICN approach taken. We reckon that the later is a much more formidable task and we are looking forward to tackling it together with other members of ICNRG.</t>
+
+		<t>We argue that addressing management at an early stage is not only important for real-world adoption and the successful future deployment of ICN, but also to deal with scenarios where management can simplify, enhance or optimize ICN network utilization and performance. The subject becomes particularly challenging, as disparate characteristics from different ICN approaches (e.g., in terms of namespace, granularity, routing, and so on) impact the definition and design of these management mechanisms. This document analyses ICN Management under three different perspectives. Firstly, in <xref target="ICN_MGMT_Appro"></xref> it will provide considerations regarding the usage of ICN mechanisms for realizing management procedures. Secondly, in <xref target="MGMT_ICN_Aspe"></xref> will look into how the intrinsic procedures used for operating the ICN architecture can be managed. Finally, in <xref target="ICN_HYBRID"></xref> we will look in a combined way to the former two issues and identify the role of ICN when it's own procedures will be used to manage ICN operations.</t>
+		
+		<t>We plan to incrementally develop the draft, incorporating considerations on other ICN aspects as well as different approaches (e.g., [PURSUIT] and [NetInf]) as well as address other pertinent aspects as we receive feedback from the research group members.</t>
+    </section>
+
+    <section title="ICN Management Approaches" anchor="ICN_MGMT_Appro">
+
+      <t>In this part of the document, ICN management approaches will be addressed in respect to how ICN mechanisms can be used to realize management procedures, how to manage the specific ICN mechanisms themselves and hybrid approaches where the ICN mechanisms themselves are used to realize the management of ICN aspects.</t>
+
+      <section title="ICN-assisted Management">
+
+        <t>This section addresses how the ICN operational mechanisms can be used to realize different kinds of network managament procedures.</t>
+
+        
+        <section title="Video Adaptation" anchor="sec-vid-adapt">
+
+
+
+  <t> This section investigates ICN management considerations for the delivery of video data, and especially the adaptive delivery of video. From a content perspective, multimedia is omnipresent in the Internet, e.g., producing 62% of the total Internet traffic in North America's fixed access networks <xref target="GIPR2013"></xref>.</t>
+
+<t>
+Video, and multimedia content in general, is has specific characteristics, which have to be considered and where network management consideration are necessary. The consumption of multimedia content comes along with timing requirements for the delivery of the content, for both, live and on-demand consumption. Long startup delays, buffering periods or poor quality, etc. should be avoided to achieve a good Quality of Experience of the consumer of the content. Of course, these requirements are heavily influenced by routing decision and caching, which are central parts of ICN, and which may be leveraged more efficiently by an intelligent network management.
+</t>
+
+<section title="Adaptive Delivery of Multimedia Content in ICN" anchor="sec-adap-delv">
+
+<t>Today's dominant streaming systems are based on the common approach of leveraging HTTP-based Internet infrastructures, which are consequently based on the Transmission Control Protocol (TCP) and the Internet Protocol (IP). Especially the adaptive multimedia streaming (AMS) via HTTP is gaining more and more momentum and resulted in the standardization of MPEG-DASH <xref target="MPEG-DASH"></xref>, which stands for Dynamic Adaptive Streaming over HTTP. The basic idea of AHS is to split up the media file into segments of equal length, which can be encoded at different resolutions, bitrates, etc. The segments are stored on conventional HTTP Web server and can be accessed through HTTP GET requests from the client. Due to this, the streaming system is pull based and the entire streaming logic is on the client side. This means that the client fully controls the bitrate of the streaming media on a per-segment basis, which has several advantages, e.g., the client knows its bandwidth requirements and capabilities best. As one can see, ICN and adaptive multimedia streaming have several elements in common, such as the client-initiated pull approach, the content being dealt with in pieces as well as the support of efficient replication and distribution of content pieces within the network. As ICN is a promising candidate for the Future Internet (FI) architecture, it is useful to investigate its suitability in combination with AMS systems and standards like MPEG-DASH as shown in <xref target="AdaptCCN"></xref><xref target="InterAdaptCCN"></xref>, as well as the possibilities and benefits of intelligent network management to improve the performance of AMS in ICN as well as the resulting QoE at the client.</t>
+
+<t>One of the most promising aspects in this context is the possibility of ICN to consume content from different origin nodes as well as over different network links in parallel, which can be seen as an intrinsic error resilience feature w.r.t. the network. This is a useful feature of ICN for adaptive multimedia streaming within mobile environments since most mobile devices are equipped with multiple network links. Here, a focus of ICN management could be in the load balancing of such traffic between the available links. This would increase the effective media throughput of the multimedia content, however, it could potentially lead to high variations of the resulting bandwidth which is available to the client. As DASH is designed for environments with dynamic bandwidth conditions, they can be compensated in general. However, more conservative adaptation algorithms may prevent too frequent switching between the content's bitrate representations as well as compensate short-term bandwidth drops caused by network link switches more smoothly.</t>
+
+
+
+</section>
+
+
+
+        </section>
+
+        <section title="Content Management" anchor="sec-con-man">
+
+
+<t>An ICN network aims to facilitate access to, and delivery of, information objects (content and services). Content (in particular, video) access and delivery seems to be the dominant use case in traditional, host-based networks, so ICN networking is forced to adopt content delivery as a minimum requirement. Indeed, virtually all ICN approaches so far target at least content delivery.</t>
+
+<t>From the perspective of a content owner or provider, an ICN network functions essentially as a content delivery network. This creates a set of requirements for ICN. First of all, end-users and content providers alike should be able to Read (consume) a content object available on the ICN network. In addition, content providers need the ability to Create (publish), Update, and Delete content. Finally, Accounting (logging) is necessary to support business models that typically require charging, analytics, and monitoring.</t>
+
+<t>The Read operation has received the lion's share in ICN research. This is expected as content access and delivery is at the heart of ICN. Given a request for a named content object, the ICN network resolves that name to an object replica and proceeds with delivery to the end-user. Of course, different ICN approaches employ different mechanisms to achieve the Read operation. For example, name resolution can be done with a hierarchical system resembling DNS, with DHTs, or with flooding. Similarly, content delivery can be done over normal best-effort paths from the origin server, over dynamically computed provisioned paths, or from caches close to the end-user. Some approaches can even cater to mobile end-users and content hosts. ICN should be able to handle frequent Reads as well as Read spikes (flash crowds). In fact, it seems crucial for ICN's deployment chances to at least match the capabilities of incumbent content delivery systems.</t>
+  
+<t>ICN research has not addressed Create as much as Read, but some effort has been expanded on mechanisms for publishing content. Much of this effort has focused on content naming schemes that enable global uniqueness of names and hence allow global addressing of the content objects. It has been difficult to balance human readability of names, efficiency in machine processing, and name aggregation (that can realistically enable request routing by name). Although a fully automated mechanism for (human-readable) name assignment would be desirable, so far it seems that a manual process, similar to that of domain name registration in DNS, is necessary to allocate at least namespaces. No other restrictions on naming have been seriously considered. The consensus seems to be that with ICN anyone should be able to publish anything. Content semantics are a higher layer issue. This might be a prudent approach when building a transport layer technology, but it could undermine the potential of ICN deployment. A content owner would not want copies of its content published on an ICN network under different names. In any case, once a name has been assigned, the Create operation is mainly about creating an entry in the name resolution system. This is obviously a security risk and furthermore, for highly distributed name resolution systems, it can suffer from considerable lag in availability. Fortunately, Create is a rare operation compared to Read.</t>
+
+<t>Update is an operation that seeks to alter an already created object. A content provider would want to modify the data or the metadata of a published object either to rectify publication errors or to augment the object. It is debatable whether the provider should address the later simply by creating a new object. Another use case for Update comes from the need to rebrand or alias an object when its rights have been sold to another party. Nevertheless, the Update operation has received minimal attention in ICN research. The main problem is one of consistency: once an update has been committed, an ICN network with highly distributed name resolution and content delivery (caching) would host both the old and new versions of the updated content object for some time. Security concerns for the Update and Create operations are similar. Update is normally rarer than Create, but this will not be the case for collaborative media.</t>
+
+<t>Content providers may occasionally need to remove a published object. This is the goal of the Delete operation. An object might be deleted when it was published by mistake, because it's no longer useful or relevant, or because it's illegal. Consistency is a major challenge for the Delete operation as well. The high degree of distribution in ICN can sustain a network state where some data or metadata replicas of an object have been deleted, while others persist. On the other hand, this lag can be beneficial if deletion was initiated erroneously or maliciously. Like with the Update operation, Delete has not been properly investigated in ICN research. Deletes are typically less often than updates.</t>
+
+<t>From the point of view of content providers and end users, an ICN network resembles a content directory and repository, with Create, Read, Update, and Delete as typical operations. As with any database system, the reliability of those operations (or transactions) depends on the properties of atomicity, consistency, isolation, and durability. The challenge for ICN research is to build systems at a massive scale that employ those properties.</t>   
+
+        </section>
+
+        <section title="Network Policies" anchor="sec-anc-pol">
+
+          <t>Currently this section addresses Network Policies under the scope of NetInf. In future instantiations of this document, a more generic approach will be provided, besides highlighting specific ICN instantiations contributions.</t>
+
+  <section title="NetInf Management Considerations" anchor="sec-netinf-mgmt">
+  
+    <t>Early-phase work in NetInf management <xref target="NetInfSelfX"></xref> discussed a two-fold problem. The first question that arises is whether it is possible by adopting a new set of network primitives and in-network storage to usher a new type of network management. In other words, can network management become information-centric while handling often host-centric data? The second question is whether an information-centric network is more suitable for self-management mechanisms than IP-based networks are.  In particular with respect to the later, <xref target="NetInfSelfX"></xref> introduced some design considerations for adding self-management mechanisms in NetInf.</t>
+    
+    <t>Of interest from this early work are two examples where network management can play a new role. First, network management can get involved in decisions about caching and (re)distribution of content, and not only whether an (inter)face is on or off, or what traffic limits should be enforced.  Moreover, network policies can be distributed securely in the same way as other content in the network, removing the need for centralized management, and enabling improved recovery procedures. Second, network management can get involved in more intricate processes such as controlling multiaccess support, intermediating for content adaptation when deemed appropriate, and enabling richer tools for traffic engineering.</t> 
+    
+  </section>
+
+        </section>
+
+        <section title="Resource Management" anchor="sec-fine">
+
+          <t>While caching has been the focus of much of the attention in ICN, one of the key advantages of the ICN architecture is that it allows a fine grained allocation of content to resources. This has been observed in <xref target="CB-TE"></xref> and <xref target="ICN-TE"></xref> for instance. Unlike IP, an ICN packet carries specific, explicit information about the content it carries. Further, this content is uniquely named, and different versions of the content will have different names.</t> 
+
+<t>ICN enables a shift in how to manage resources: instead of allocating open-ended flows to network resource, it allows to allocate well defined objects. This requires new network management tools beyond the current mechanisms which are specifically dedicated to ICN. NetFlow or the current TE mechanism do not take advantage of the ICN semantics, and of the benefits associated with these semantics.</t>
+
+<t>In IP, a flow from a certain source address to a certain destination address can correspond to myriad potential applications: web traffic, video streaming, VoIP call all may use the same port 80 and be hosted by same servers. Therefore, providing appropriate resource to such a flow is a matter of guessing. The simple problem of identifying when a flow terminates is made unnecessarily complex in ICN: a timer is set-up, and when no packets match the flow filter, then the flow is over. Of course, multiple packets from different applications may match the same filter, and flows with different characteristics in terms of inter-arrival times could be broken down into multiple flows with an improper choice of time-out values.</t>
+
+<t>In ICN, there is a unique mapping of the name to the content of the data stream going through the network. If a content object is requested, then it has well defined semantics, and the network management layer can identify exactly when the data stream starts and ends based upon these semantics. Further, a content management layer can also learn the properties of the stream associated with a given identifier. <xref target="CB-TE"></xref> presented such a mechanism to learn the properties associated with a name, either by counting the bytes on the wire corresponding to this name, or by reading the footprint of the content with this name when stored in a cache. It is therefore possible for the management layer to gather meta-data pertaining to the content that goes through the network, and to use this meta-data to make proper resource allocations.</t>
+
+<t>Of course, the resource manager should only acquire meta-data about content that is likely to be seen again (i.e., popular) or specific in any way (for instance, the name of an elephant flow). This considerably simplifies the task as the data of interest is concentrated on a few items. One potential usage of this meta-data is to keep track of what content is going through which link. In this scenario, each link keeps an aggregate tally of the amount of data that has been assigned to this link and subtracts the amount that has gone through. The resulting backlog can be then used to allocate new data streams to this or another link. </t>
+
+<t>In <xref target="ICN-TE"></xref>, it was shown that such a policy would significantly reduce the time spent in the network by content streams when considering a WAN topology and its corresponding end-to-end traffic matrix. The network load would stay the same when comparing with a min-MLU policy, but by splitting elephant flows across different paths, the completion time would be reduced. In the simulations of <xref target="ICN-TE"></xref>, min-MLU is roughly 50% slower than a content-based policy.</t>
+
+<t>This is an encouraging result and a step towards a management framework that assigns resource to content in a deterministic and fine-grained manner, unlike the probabilistic allocation of IP. The ICNRG should consider such a management framework, and evaluate the different proposals in light of this opportunity. For instance, an ICN architecture such as <xref target="PURSUIT"></xref> contains a natural mechanism to perform such allocation of content to paths as it assigns a source route to the content. On the other hand, an ICN architecture such as <xref target="NDN"></xref> needs to be expanded as the link allocation semantics are, in the current proposal, tied to the content resolution process: the interest homes into the content, and lays the reverse path for the content delivery at the same time. This semantics make the management for multiple link selection more difficult, as multiple interests would have to be sent over multiple links to provide path diversity. However, it could be an area of study for the ICNRG as solving such resource management problem would provide significant benefits to ICN architectures.</t>
+        </section>
+      
+      </section>
+
+      <section title="Management for ICN Aspects" anchor="MGMT_ICN_Aspe">
+
+        <t>This section will address management aspects for intrinsic ICN procedures.</t>
+
+        
+        <section title="Caching" anchor="sec-cache-management">
+
+    <t>Caching is a hot topic research nowadays in ICN. The challenges of caching in ICN are different than those of web caching, mainly because the former has to deal with high line rates and with a huge amount of content. Some ICN works propose to cache content in all ICN routers traversed by the data packet, in an LCE (Leave Copy Everywhere) fashion as in <xref target="NDN"></xref>. Some studies, like <xref target="L4M-ICN"></xref>, have shown that other cache decision policies, focused to reduce the cache redundancy, may increase the overall caching performance. Some of these decision policies  only use the local information available at the ICN routers, but others use the information available at other nodes to cache or not the incoming content. This is known as explicit cache coordination decision, and there are several proposals around this concept <xref target="ICN-CACHING"></xref>. The idea behind the explicit coordination is to exchange topological information, individual cache's state and content popularity view among a set of ICN routers, in order to coordinate caching decisions.</t>
+
+        <t>ICN may benefit of in-network caching, which consists of introducing content stores in ICN routers. The benefits are twofold: (1) improving the end-user experience by reducing the delay to retrieve content, and (2) reducing the overall aggregated bandwidth per request. On the other hand, caching in ICN presents several challenges like (1) centralized vs distributed management of the caches, (2) cache scalability, reducing the impact of the size of the total content catalog, (3) routing based on cache contents, (4) considering the different requirements imposed by different types of traffic (web/multimedia/IoT/etc.), etc. Most of these challenges can be solved, or at least minimized, by introducing management considerations in ICN proposals.</t>
+
+    <t>This way, a given ICN router may forward a request towards another router storing the requested content. In this context, the routing protocol is affected by the cache's state of surrounding neighbours. For example, in <xref target="CATT"></xref> the authors propose to distinguish between the source(s) and routers' caches that hold a copy of that content: the former paths are globally advertised, while the latter are only advertised within the router's neighbourhood. In all these cases, the use of a management framework may bring significant advantages, providing standard interfaces that allow the routers to dynamically manage their caches.</t>
+
+        </section>
+
+        <section title="Information Freshness">
+
+         <t> One of the prime contributions of ICN-based designs, is the ability for the networking entities in charge of exercising the routing of the content, to actually store it, allowing it to serve content requests in a more readily fashion. However, there are scenarios where such facilities can raise issues, such as Internet of Things and Machinte-to-Machine scenarios. Concretely, despite the caching capabilities of ICN contributing for, as an example, reducing the amount of networking stack fabric to be implemented in low-powered nodes and sensors, it can cause that the information consumed from caches is not up-to-date comparing to the information currently existing at the source. As an example, consider an accelerometer sensor which is providing the acceleration value of a car, and disseminates it via a ICN network towards different uses. When a consumer (e.g., a road traffic monitoring infrastructure) wishes to know the current speed of the car by requesting its name, it can be served by a stale content residing in a cache between the consumer and the information source.</t>
+
+         <t> These kinds of situations demand facilities and mechanisms to avoid the provision of stale content. For example, <xref target="ICN-FRESHNESS"></xref> considers the realization of an agreement mechanism, using ICN messaging exchanges, where both the source and the consumer agree on the minimal content freshness values for the information. Concretely, when the network entity determines that it has the content referring to a received name request, it will also evaluate the freshness value. If it is lower than the one previously agreed, it will then discard the content and rather forward the content request back to the source.</t>
+
+        </section>
+
+        </section>
+
+        <section title="Hybrid Approaches" anchor="ICN_HYBRID">
+
+          <t>This section will analyse how ICN procedures can be used to manage ICN operations.</t>
+
+          <section title="Face Management" anchor="face-man">
+
+<t>The Named Data Networking <xref target="NDN"></xref> ICN architecture provides a new communication framework built on named data. Like other ICN counterparts, such as <xref target="NetInf"></xref>, <xref target="PURSUIT"></xref> and <xref target="DONA"></xref>, NDN intrinsically supports security, routing/forwarding, reliability, caching and even mobility, aiming at scalable and more efficient content-distribution than today's IP-based approaches. Fostered by an open-source implementation <xref target="CCNx"></xref>, NDN has been at the heart of an active topic with several research contributions evaluating its deployment feasibility and performance in a number of scenarios <xref target="ICN-Scenarios"></xref>.</t>
+
+    <t>NDN introduces the concept of a Strategy Layer, which can control Interest packet forwarding behavior. It basically determines which is the best interface (or set of interfaces) to send an Interest packet. The "strategy" component establishes a pre-configured algorithm for tackling Interest packet decisions, ranging from sending it sequentially on each interface until a Data packet is received, to evaluating which interfaces provide better performance (i.e., lower average RTT) in retrieving certain content (as discussed in <xref target="NDN"></xref>).</t>
+    
+    <t>It is important to keep in mind that NDN replaces the commonly used term "interface" with the term "face", since packets can be forwarded over hardware network interfaces  as well as between application interfaces, further acknowledging the information dissemination capabilities of ICN. This aspect is considered in <xref target="NDN"></xref> and <xref target="NDN-R"></xref>, where programs can be associated to the NDN governing structures (like the FIB), defining configurations such as "sendToAll" and "sendToBest" with respect to managing the content reaching process. Corujo et al. <xref target="NDN-MGMT"></xref> exploit these concepts enabling management mechanisms to be deployed, and steer network operations and NDN operation, as described in the following section.</t>
+
+    <t>An important aspect supporting network management procedures is the interaction of network information residing at the network side with information about the network from the perspective of clients connected to it. The former includes, for instance, information stored in the network operator core about user profiles, associated policies, or data collected by the access network equipment, such as current and past traffic load levels, active flows, and maintenance information. Today, such information can be retrieved for management and operation support through dedicated signaling protocols (e.g., <xref target="RFC1157"></xref>, <xref target="RFC6733"></xref>), or Operation Support Services (OSS) web services. The client point of view of the network includes information that, for example, a wireless terminal can provide, indicating wireless link quality, average return-trip times (RTT) or perceived Quality of Experience (QoE).</t>
+
+    <t>Both types of information can be capitalized upon allowing, for example, the network to coordinate network management procedures, considering as input information obtained from other network elements as well as from user nodes. One way to generate management information in network entities and at client nodes, as well as to consume and act upon it (i.e., using the management information exchange as a control channel) is to couple NDN nodes with Management Agent (MA) entities.</t>
+    
+    
+    <t>Fig. 1 (redrawn here from <xref target="NDN-MGMT"></xref> for convenience) illustrates how a MA can be deployed in both network and client entities, interfacing with different operational aspects and protocol layers of an NDN node. By using NDN content reaching and disseminating mechanisms, management information can be consumed by the MA to steer not only the behavior of application processes and network interfaces, but also to interface with NDN supporting structures (i.e. Content Store (CS), Forward Information Base (FIB) and Pending Interest Table (PIT). Effectively, different kinds of information can be conveyed to a network node responsible for managing the network (under different perspectives and processes), and resubmitted back towards client nodes, affecting the way applications interface with network interfaces and the NDN fabric.</t>
+
+
+    <figure align="center">
+    <artwork align="left"><![CDATA[
+ NDN Fabric
+   +------------------------------------------+
+   |                                   Face 0 |
+   | +--------------+                   +---+ |  +------+
+   | |Content Store |      ptr/type     |  <---->|WLAN  |
+   | +------------^-+      +-+----+     +---+ |  +------+
+   |              +---------+|    |    Face 1 |
+   | +--------------+      +------+     +---+ |  +------+
+   | |Pending      <--------+|    |     |  <---->|LTE   |
+   | |Interest Table|      +------+     +---+ |  +------+
+   | +--------------+      | |    |    Face i |
+   |                       +------+     +---+ |  +------+
+   | +--------------+      | |    |     |  <---->| MA   |
+   | |Forward       |      +------+     +---+ |  +------+
+   | |Information <---------+|    |    Face j |
+   | |Base          |      +-+----+     +---+ |  +------+
+   | +--------------+                   |  <---->|VoIP  |
+   |                                    +---+ |  |Video |
+   +------------------------------------------+  +------+            
+]]>
+   Figure 1.  NDN Management Framework
+    </artwork>
+    </figure>
+
+    <t>MA can interface with the PIT and FIB structures, acting as a dynamic, application- and/or network-controlled interface to the strategy layer. This could also be used to direct how to forward NDN Interest and Data packets, in a configurable manner. Regarding  network interfaces, the MA can interface with them not only to control (i.e., initiate wireless access scanning procedures), but also to collect information (i.e., an informational event regarding detected access points). Finally, the MA can also interface with application processes, drawing out information about the perceived QoS/QoE (e.g., lost packets or delay from a real-time video feed) and also to execute commands, such as selecting a better video codec when the network commands the video flow to be accessed from a different wireless access interface.</t>
+
+    <t>Conversely, MA entities residing in network equipment can provide informational events as well, but related to network-side link layer characteristics (such as number of attached nodes or load), as well as accepting commands from the network (i.e., activate maintenance procedures). Management processes residing in the network core can leverage information collected from applications, client terminals and network equipment, to drive optimization procedures. Such optimization procedures can also tap into other entities, containing complementary information such as policies and subscription information, and use it to produce an overall network decision, which can then be forwarded to multiple client nodes, in a policy enforcing way.</t>
+
+    <t>An important consideration from the NDN architecture, is the hierarchical namespace, allowing nodes to request and convey management data, by simply using an appropriate prefix (e.g., ccn://domain/management/ME).</t>
+
+    <t>By leveraging the NDN information-centric dissemination mechanisms to convey management information and commands as content, these management extensions inherit the intrinsic capabilities of the NDN architecture, including security and reliability, which are fundamental for management procedures.</t>
+
+          </section>
+
+        </section>
+
+
+
+
+    </section>
+
+
+
+	
+
+    <section anchor="Acknowledgements" title="Acknowledgements">
+		<t>This document has benefited from comments and/or text provided by the following members of ICNRG: TBD</t>
+		
+<!--		<t>Jaime Garcia-Reinoso (UC3M); <xref target="sec-ndn-mgmt-impl"/> </t> -->
+    </section>
+
+
+    <section anchor="IANA" title="IANA Considerations">
+
+	<t>This memo includes no request to IANA.</t>
+
+	</section>
+
+	
+    <section anchor="Security" title="Security Considerations">
+	
+    <t>TBD</t>
+	
+    </section>
+  </middle>
+
+  <!--  *****BACK MATTER ***** -->
+
+  <back>
+    <!-- References split into informative and normative -->
+
+    <!-- There are 2 ways to insert reference entries from the citation libraries:
+     1. define an ENTITY at the top, and use "ampersand character"RFC2629; here (as shown)
+     2. simply use a PI "less than character"?rfc include="reference.RFC.2119.xml"?> here
+        (for I-Ds: include="reference.I-D.narten-iana-considerations-rfc2434bis.xml")
+
+     Both are cited textually in the same manner: by using xref elements.
+     If you use the PI option, xml2rfc will, by default, try to find included files in the same
+     directory as the including file. You can also define the XML_LIBRARY environment variable
+     with a value containing a set of directories to search.  These can be either in the local
+     filing system or remote ones accessed by http (http://domain/dir/... ).-->
+
+    <references title="Informative References">
+      <!-- Here we use entities that we defined at the beginning. -->
+
+
+      &RFC3552;
+
+      &RFC5226;
+        
+        &RFC1157;
+        
+        &RFC6733;
+
+      <!-- A reference written by by an organization not a person. -->
+
+
+
+
+
+<reference anchor="GIPR2013">
+            <front>
+                <title>Global Internet Phenomena Report 1H 2013</title>
+                <author initials="" surname="Sandivine" fullname="Sandivine"> <organization/>  </author> 		
+		<date year="2013"/>
+            </front>
+            <seriesInfo name="Sandvine Intelligent Broadband Networks" value=""/>
+        </reference>
+
+
+<reference anchor="CATT">
+            <front>
+                <title>CATT: potential based routing with content caching for ICN</title>
+                <author initials="S." surname="Eum" fullname="S. Eum"> <organization/>  </author>    
+                <author initials="K." surname="Nakauchi" fullname="K. Nakauchi"> <organization/>  </author>  
+                <author initials="M." surname="Murata" fullname="M. Murata"> <organization/>  </author>  
+                <author initials="Y." surname="Shoji" fullname="Y. Shoji"> <organization/>  </author>  
+                <author initials="N." surname="Nishinaga" fullname="N. Nishinaga"> <organization/>  </author>  
+    <date year="2012"/>
+            </front>
+            <seriesInfo name="Workshop on Information-centric networking, pp 49-54" value=""/>
+        </reference>
+
+<reference anchor="ICN-CACHING">
+            <front>
+                <title>Caching in information centric networking: A survey</title>
+                <author initials="G." surname="Zhang" fullname="G. Zhang"> <organization/>  </author>    
+                <author initials="Y." surname="Li" fullname="Y. Li"> <organization/>  </author>  
+                <author initials="T." surname="Lin" fullname="T. Lin"> <organization/>  </author>  
+    <date year="2013"/>
+            </front>
+            <seriesInfo name="Computer Networks, vol. 57, no. 16, pp. 3128-3141, Nov" value=""/>
+        </reference>
+
+<reference anchor="ICN-FRESHNESS">
+            <front>
+                <title>Consumer Driven Information Freshness Approach for Content Centric Networking</title>
+                <author initials="J." surname="Quevedo" fullname="J. Quevedo"> <organization/>  </author>    
+                <author initials="D." surname="Corujo" fullname="D. Corujo"> <organization/>  </author>  
+                <author initials="R." surname="Aguiar" fullname="R. Aguiar"> <organization/>  </author>  
+    <date year="2014"/>
+            </front>
+            <seriesInfo name="IEEE INFOCOM Workshop on Name-Oriented Mobility, Toronto, Canada, May" value=""/>
+        </reference>
+
+
+<reference anchor="L4M-ICN">
+            <front>
+                <title>Cache "less for more" in information-centric networks</title>
+                <author initials="W. K." surname="Chai" fullname="W. K. Chai"> <organization/>  </author>    
+                <author initials="D." surname="He" fullname="D. He"> <organization/>  </author>  
+                <author initials="I." surname="Psaras" fullname="I. Psaras"> <organization/>  </author>  
+                <author initials="G." surname="Pavlou" fullname="G. Pavlou"> <organization/>  </author>  
+    <date year="2012"/>
+            </front>
+            <seriesInfo name="Lecture Notes in Computer Science Vol. 7289, Springer, pp. 27-40" value=""/>
+        </reference>
+
+
+        <reference anchor="MPEG-DASH">
+            <front>
+                <title>The MPEG-DASH Standard for Multimedia Streaming Over the Internet</title>
+                <author initials="I." surname="Sodagar" fullname="I. Sodagar">
+                    <organization/>
+                </author>
+                <date year="2011" />
+            </front>
+            <seriesInfo name="IEEE MultiMedia, IEEE, vol.18, no.4, pp.62-67" value=""/>
+        </reference>
+
+
+
+
+        <reference anchor="AdaptCCN">
+            <front>
+                <title>Adaptive Streaming over Content Centric Networks in Mobile Networks using Multiple Links</title>
+                <author initials="S." surname="Lederer" fullname="S. Lederer">
+                    <organization/>
+                </author>
+			<author initials="C." surname="Mueler" fullname="C. Mueler">
+                    <organization/>
+                </author>
+			<author initials="B." surname="Rainer" fullname="B. Rainer">
+                    <organization/>
+                </author>
+			<author initials="C." surname="Timmerer" fullname="C. Timmerer">
+                    <organization/>
+                </author>
+			<author initials="H." surname="Hellwagner" fullname="H. Hellwagner">
+                    <organization/>
+                </author>
+                <date year="2013" month="June"/>
+            </front>
+            <seriesInfo name="Proceedings of the IEEE International Conference on Communication (ICC), Budapest, Hungary" value=""/>
+        </reference>
+
+ <reference anchor="InterAdaptCCN">
+            <front>
+                <title>On the Interaction of Adaptive Video Streaming with Content-Centric Networking</title>
+                <author initials="R." surname="Grandl" fullname="R. Grandl">
+                    <organization/>
+                </author>
+			<author initials="K." surname="Su" fullname="K. Su">
+                    <organization/>
+                </author>
+			<author initials="C." surname="Westphal" fullname="C. Westphal">
+                    <organization/>
+                </author>
+                <date year="2013" month="December"/>
+            </front>
+            <seriesInfo name="Proceedings of the 20th Packet Video Workshop 2013, San Jose, USA" value=""/>
+        </reference>
+
+
+
+
+        <reference anchor="NDN-MGMT">
+            <front>
+                <title>A named data networking flexible framework for management communications</title>
+                <author initials="D." surname="Corujo" fullname="D. Corujo">
+                    <organization/>
+                </author>
+                <author initials="I." surname="Vidal" fullname="I. Vidal">
+                    <organization/>
+                </author>
+                <author initials="J." surname="Garcia-Reinoso" fullname="J. Garcia-Reinoso">
+                    <organization/>
+                </author>
+                <author initials="R." surname="Aguiar" fullname="R. Aguiar">
+                    <organization/>
+                </author>
+                <date year="2012" month="Dec"/>
+            </front>
+            <seriesInfo name="Communications Magazine, IEEE , vol.50, no.12, pp.36-43" value=""/>
+        </reference>
+
+        <reference anchor="NDN">
+            <front>
+                <title>Networking Named Content</title>
+                <author initials="V." surname="Jacobson" fullname="V. Jacobson">
+                    <organization/>
+                </author>
+                <author initials="D.K." surname="Smetters" fullname="D.K. Smetters">
+                    <organization/>
+                </author>
+                <author initials="J.D." surname="Thornton" fullname="J.D. Thornton">
+                    <organization/>
+                </author>
+                <author initials="M.F." surname="Plass" fullname="M.F. Plass">
+                    <organization/>
+                </author>
+                <author initials="N.H." surname="Briggss" fullname="N.H. Briggs">
+                    <organization/>
+                </author>
+                <author initials="R.L." surname="Braynard" fullname="R.L. Braynard">
+                    <organization/>
+                </author>
+                <date year="2009" month="Dec"/>
+            </front>
+            <seriesInfo name="CoNEXT 2009, Rome" value=""/>
+        </reference>
+
+        <reference anchor="NDN-VOIP">
+            <front>
+                <title>VoCCN: Voice Over Content-Centric Networks</title>
+                <author initials="V." surname="Jacobson" fullname="V. Jacobson">
+                    <organization/>
+                </author>
+                <author initials="D.K." surname="Smetters" fullname="D.K. Smetters">
+                    <organization/>
+                </author>
+                <author initials="N.H." surname="Briggss" fullname="N.H. Briggs">
+                    <organization/>
+                </author>
+                <author initials="M.F." surname="Plass" fullname="M.F. Plass">
+                    <organization/>
+                </author>
+                <author initials="P." surname="Steward" fullname="P. Steward">
+                    <organization/>
+		</author>
+                    <author initials="J.D." surname="Thornton" fullname="J.D. Thornton">
+                        <organization/>
+                    </author>
+                <date year="2009" month="Dec"/>
+            </front>
+            <seriesInfo name="ReARCH 2009, Rome" value=""/>
+        </reference>
+        
+        <reference anchor="NetInf">
+            <front>
+                <title>Design considerations for a network of information</title>
+                <author>
+                    <organization>Ahlgren, B. et al.</organization>
+                </author>
+
+                <date year="2008" month=""/>
+            </front>
+            <seriesInfo name="CoNEXT, Re-Arch Workshop, ACM" value=""/>
+        </reference>
+  
+      <reference anchor="CB-TE">
+            <front>
+                <title>Content Based Traffic Engineering in Software Defined Information Centric Networks</title>
+                <author>
+                    <organization>Chanda, A. et al.</organization>
+                </author>
+
+                <date year="2013" month="April"/>
+            </front>
+            <seriesInfo name="IEEE INFOCOM Workshop NOMEN" value=""/>
+        </reference>
+   
+      <reference anchor="ICN-TE">
+            <front>
+                <title>On the Benefit of Information Centric Networks for Traffic Engineering</title>
+                <author>
+                    <organization>Su, K. et al.</organization>
+                </author>
+
+                <date year="2014" month="June"/>
+            </front>
+            <seriesInfo name="IEEE ICC" value=""/>
+        </reference>
+   
+      
+        <reference anchor="PURSUIT">
+            <front>
+                <title>Developing Information Networking Further: From PSIRP to PURSUIT</title>
+                
+                <author>
+                    <organization>Fotiou, N. et al.</organization>
+                </author>
+
+                
+                <date year="2010" month=""/>
+            </front>
+            <seriesInfo name="BROADNETS, ICST" value=""/>
+        </reference>
+        
+        <reference anchor="DONA">
+            <front>
+                <title>A Data-Oriented (and Beyond) Network Architecture</title>
+                <author>
+                    <organization> Koponen, T. et al.</organization>
+                </author>
+                
+                <date year="2007" month=""/>
+            </front>
+            <seriesInfo name="SIGCOMM, ACM" value=""/>
+        </reference>
+       
+ 
+        <reference anchor="NDNFlexManager"
+            target="https://github.com/ndnflexmanager/framework">
+            <front>
+                <title>Framework for Flexible NDN Management</title>
+                
+                <author>
+                    <organization>UC3M and ITAV</organization>
+                </author>
+                
+                <date year="2013" />
+            </front>
+        </reference>
+      
+
+ 
+        <reference anchor="CCNx"
+            target="http://www.ccnx.org">
+            <front>
+                <title>CCNx Project</title>
+                
+                <author>
+                    <organization>PARC</organization>
+                </author>
+                
+                <date year="2013" />
+            </front>
+        </reference>
+      
+        <reference anchor="NDN-R" target="http://www.named-data.net/techreport/TR001ndn-proj.pdf">
+            <front>
+                <title>Named Data Networking (NDN) Project</title>
+                <author>
+                    <organization>Zhang, L. et al.</organization>
+                </author>
+                
+                <date year="2010" month=""/>
+            </front>
+            <seriesInfo name="NDN Report ndn-0001, Tech Report, PARC" value=""/>
+        </reference>
+        
+        <reference anchor="NetInfSelfX">
+            <front>
+                <title>Self-Management for a Network of Information</title>
+                <author>
+                    <organization>Pentikousis, K. et al.</organization>
+                </author>
+                
+                <date year="2009" month="June"/>
+            </front>
+            <seriesInfo name="IEEE ICC Workshops 2009" value=""/>
+        </reference>
+        
+      <reference anchor="ICN-Scenarios">
+        <front>
+          <title>ICN Baseline Scenarios</title>
+
+            <author initials="K." surname="Pentikousis" fullname="K. Pentikousis">
+                <organization/>
+            </author>
+            <author initials="B." surname="Ohlman" fullname="B. Ohlman">
+                <organization/>
+            </author>
+            <author initials="D." surname="Corujo" fullname="D. Corujo">
+                <organization/>
+            </author>
+            <author initials="G." surname="Boggia" fullname="G. Boggia">
+                <organization/>
+            </author>
+
+          <date month="February" year="2013" />
+        </front>
+		<seriesInfo name="draft-pentikousis-icn-scenarios" value=" (work in progress)"/>
+      </reference>
+        
+        
+
+    </references>
+
+
+
+    <!-- Change Log
+
+v00 2006-03-15  EBD   Initial version
+
+v01 2006-04-03  EBD   Moved PI location back to position 1 -
+                      v3.1 of XMLmind is better with them at this location.
+v02 2007-03-07  AH    removed extraneous nested_list attribute,
+                      other minor corrections
+v03 2007-03-09  EBD   Added comments on null IANA sections and fixed heading capitalization.
+                      Modified comments around figure to reflect non-implementation of
+                      figure indent control.  Put in reference using anchor="DOMINATION".
+                      Fixed up the date specification comments to reflect current truth.
+v04 2007-03-09 AH     Major changes: shortened discussion of PIs,
+                      added discussion of rfc include.
+v05 2007-03-10 EBD    Added preamble to C program example to tell about ABNF and alternative 
+                      images. Removed meta-characters from comments (causes problems).
+
+v06 2010-04-01 TT     Changed ipr attribute values to latest ones. Changed date to
+                      year only, to be consistent with the comments. Updated the 
+                      IANA guidelines reference from the I-D to the finished RFC.  -->
+  </back>
+</rfc>
